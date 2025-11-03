@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div>Nevoxio</div>
             </div>
             <nav>
-                <a href=home.html><span class="dot"></span> Home</a>
+                <a href=index.html><span class="dot"></span> Home</a>
                 <a href="about bot.html"><span class="dot"></span> Product</a>
                 <a href="features.html"><span class="dot"></span> Features</a>
                 <a href="order page.html"><span class="dot"></span> Pricing</a>
@@ -91,4 +91,5 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
+
 });
