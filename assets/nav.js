@@ -20,7 +20,7 @@
                     <button class="close-nav" aria-label="Close menu">×</button>
                 </div>
                 <div class="nav-links">
-                    <a href=home.html>Home</a>
+                    <a href=index.html>Home</a>
                     <a href="about bot.html">Product</a>
                     <a href="features.html">Features</a>
                     <a href="order page.html">Pricing</a>
@@ -62,4 +62,5 @@
             }
         });
     }
+
 })();
