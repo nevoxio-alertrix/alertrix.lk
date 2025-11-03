@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+  .text-foreground {
+    color: #120d1b;
+  }
+  .dark .text-foreground {
+    color: #f9f8fc;
+  }
+  .text-foreground-muted {
+    color: #6b6678;
+  }
+  .dark .text-foreground-muted {
+    color: #a09aac;
+  }
+  .border-subtle {
+    border-color: #ebe7f3;
+  }
+  .dark .border-subtle {
+    border-color: #2a223d;
+  }
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(118, 59, 234, 0.15);
+  }
+  .dark .liquid-glass {
+    background: rgba(42, 34, 61, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  /* Added nav hover effects */
+  nav a {
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #5b13ec;
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  </style>
+<script>
+  tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+  colors: {
+    primary: "#5b13ec",
+    "background-light": "#f6f6f8",
+    "background-dark": "#161022",
+    "neutral-light": "#120d1b",
+        "neutral-dark": "#f6f6f8",
+        "subtle-light": "#664c9a",
+        "subtle-dark": "#a899c7",
+        "border-light": "#ebe7f3",
+        "border-dark": "#2a"
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"]
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        full: "9999px"
+      },
+      boxShadow: {
+        soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+        lg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+      }
+      }
+    }
+    };
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/nav.css">
+<script src="assets/nav.js" defer></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-light dark:text-neutral-dark">
+<div class="animated-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div id="global-nav"></div>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 border-b border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+
+<a href=home.html class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+  AlertRix
+</a>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium transition-colors hover:text-primary" href="about bot.html">Product</a>
+<a class="text-sm font-medium transition-colors hover:text-primary" href="features.html">Features</a>
+<a class="text-sm font-medium transition-colors hover:text-primary" href="order page.html">Pricing</a>
+<a class="text-sm font-medium transition-colors hover:text-primary" href="bot works.html">Support</a>
+<a class="text-sm font-medium transition-colors hover:text-primary" href="about.html">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="order page.html" class="glass-effect rounded-lg bg-primary/80 px-5 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-primary">
+        Pre-Order
+      </a>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-4xl">
+<div class="text-center">
+<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Why Choose Us?</h2>
+<p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+            AlertRix stands out as the premier AI companion for medication reminders and elderly care. Our commitment to innovation, user-centric design, and unwavering support sets us apart from the competition.
+          </p>
+</div>
+<div class="mt-16">
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Key Advantages</h3>
+<div class="overflow-hidden rounded-xl shadow-lg glass-effect">
+<table class="min-w-full">
+<thead class="bg-white/10 dark:bg-black/10">
+<tr>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">Feature</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">AlertRix</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">Competitor A</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">Competitor B</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/10 dark:divide-white/5">
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">AI-Powered Reminders</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Intelligent, personalized reminders that adapt to individual needs.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Basic reminders, limited customization.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Standard reminders with fixed schedules.</td>
+</tr>
+<tr class="bg-white/5 dark:bg-black/5">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Comprehensive Care</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Activity tracking, emergency alerts, and family communication.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Primarily medication reminders.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Limited additional features.</td>
+</tr>
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">User-Friendly Interface</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Intuitive and easy-to-use for seniors and caregivers.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Complex interface, steep learning curve.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Cluttered and difficult to navigate.</td>
+</tr>
+<tr class="bg-white/5 dark:bg-black/5">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Proactive Support</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">24/7 dedicated support team for assistance.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Limited support, slow response times.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Self-service support only.</td>
+</tr>
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Affordable Pricing</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Competitive plans tailored to different needs and budgets.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Expensive plans with limited features.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">High costs with hidden fees.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-16">
+<div class="glass-effect p-8 rounded-xl shadow-lg">
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white">Our Commitment</h3>
+<p class="mt-4 text-lg text-gray-700 dark:text-gray-300">
+            Our AlertRix is designed with empathy and innovation, ensuring peace of mind for families and enhanced well-being for their loved ones. We continuously strive to improve our product and services, driven by our passion for making a positive impact on the lives of those we serve.
+          </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white/10 dark:bg-black/10 border-t border-white/10 dark:border-white/5">
+<div class="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 md:justify-start">
+<a class="text-sm text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">Product</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">Features</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">Pricing</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">Resources</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">Contact Us</a>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2025 AlertRix. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<style>
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+</style>
+
+</body></html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AlertRix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+  .text-foreground {
+    color: #120d1b;
+  }
+  .dark .text-foreground {
+    color: #f9f8fc;
+  }
+  .text-foreground-muted {
+    color: #6b6678;
+  }
+  .dark .text-foreground-muted {
+    color: #a09aac;
+  }
+  .border-subtle {
+    border-color: #ebe7f3;
+  }
+  .dark .border-subtle {
+    border-color: #2a223d;
+  }
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(118, 59, 234, 0.15);
+  }
+  .dark .liquid-glass {
+    background: rgba(42, 34, 61, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  /* Added nav hover effects */
+  nav a {
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #5b13ec;
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  </style>
+<script>
+  tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+  colors: {
+    primary: "#5b13ec",
+    "background-light": "#f6f6f8",
+    "background-dark": "#161022",
+    "neutral-light": "#120d1b",
+        "neutral-dark": "#f6f6f8",
+        "subtle-light": "#664c9a",
+        "subtle-dark": "#a899c7",
+        "border-light": "#ebe7f3",
+        "border-dark": "#2a"
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"]
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        full: "9999px"
+      },
+      boxShadow: {
+        soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+        lg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+      }
+      }
+    }
+    };
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/nav.css">
+<script src="assets/nav.js" defer></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground">
+<div class="animated-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div id="global-nav"></div>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 border-b border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+
+<a href=home.html class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+  AlertRix
+</a>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="nav-link active text-sm font-medium transition-colors hover:text-primary" href="about bot.html">Product</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="features.html">Features</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="order page.html">Pricing</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="bot works.html">Support</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="about.html">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="order page.html" class="glass-effect rounded-lg bg-primary/80 px-5 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-primary">
+        Pre-Order
+      </a>
+<button class="md:hidden">
+
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-4 py-12 md:py-20">
+<div class="max-w-4xl mx-auto">
+<section class="mb-16 @container">
+<div class="grid gap-8 @[768px]:grid-cols-2 @[768px]:items-center">
+<div class="order-2 @[768px]:order-1 liquid-glass p-8 rounded-xl">
+<h1 class="text-4xl @[480px]:text-5xl font-black tracking-tighter text-foreground mb-4">Empowering Health with AI-Driven Medication Management</h1>
+<p class="text-lg text-foreground-muted mb-6">We're dedicated to solving the critical challenge of medication mismanagement among the elderly. Our flagship product, AlertRix, combines cutting-edge AI with intuitive voice reminders to ensure timely and accurate medication adherence.</p>
+<button class="rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105">Learn More</button>
+</div>
+<div class="order-1 @[768px]:order-2">
+<div class="aspect-square w-full rounded-xl liquid-glass p-2">
+<div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4KK2lHcCUP0e907pa9HCuJACwN8y7gHdWqSmxiS5-xmpMzFEGWxZrSGpv0MUR1x7_R3cWAHUAmZ6W--wDlQGdbdHjUP8L99hWxtGLvjxwfA0-jDv84xnzkz54irNiNwYHqpDGWKz0o9q2jAnV3UmyDG1lF80rLKJN2lELH2Fjpd7Rqtd_lPrCBNorfC4GEHh5DliCxY0oOrgF9IDVoAfCwxdXQSeaXrIXEWchjFJulrwErwJj3dUblfrzlsE9YHr9rcYFrFrQHnY");'></div>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-12">
+<div class="liquid-glass p-8 rounded-xl">
+<h2 class="text-3xl font-bold tracking-tight text-foreground mb-4">The Problem: Medication Mismanagement</h2>
+<p class="text-foreground-muted leading-relaxed">Medication mismanagement is a widespread issue, particularly affecting seniors. It leads to adverse health outcomes, increased healthcare costs, and diminished quality of life. Common challenges include forgetting doses, taking incorrect dosages, and confusion about medication schedules.</p>
+</div>
+<div class="liquid-glass p-8 rounded-xl">
+<h2 class="text-3xl font-bold tracking-tight text-foreground mb-4">Our Solution: AlertRix</h2>
+<p class="text-foreground-muted leading-relaxed mb-6">AlertRix is an AI-powered companion designed to simplify medication management. It uses voice reminders to guide users through their medication schedules, ensuring they take the right medication at the right time. The bot's AI adapts to individual needs, providing personalized support and peace of mind for both users and their caregivers.</p>
+<div class="relative aspect-video w-full rounded-xl overflow-hidden group liquid-glass p-2">
+<div class="absolute inset-2 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOiSUpse0eIo-7jmOqZ1Ks17VudHFAMt1tJX_WglKkf9ok0NpZXnKMA6x5Kb9M6zff124A_Ic6TeNuY12C2tJVQl-julWd8f_4583BgNTuQZRXRThMPSOd3leJSnb4hPlfMDjoSisOiwARkyychXHap5a4KLAb6dr9w5uKqzS55Ei5P6fXiS2queuOi4598P8HXwl2J4AXnBhwxBhosL130ypOAN52fapuyMb84XIrAQ6eNuvHGL74OPJsfS4MS8xaozhOnG2_c7Y");'></div>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<button class="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110">
+<svg fill="currentColor" height="32" viewBox="0 0 256 256" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<div class="liquid-glass p-8 rounded-xl">
+<h2 class="text-3xl font-bold tracking-tight text-foreground mb-4">Our Mission</h2>
+<p class="text-foreground-muted leading-relaxed">AlertRix's mission is to leverage technology to improve the health and well-being of seniors. We believe that AI can play a vital role in enhancing medication adherence, promoting independence, and reducing the burden on caregivers. Our commitment is to create solutions that are both effective and user-friendly, making a positive impact on the lives of those we serve.</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="border-t border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center gap-8">
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Product</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="features.html">Features</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Pricing</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Support</a>
+</div>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">© 2025 AlertRix. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
