@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About AlertRix</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link rel="icon" type="image/x-icon" href="assets/LOGO.jpg">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -31,17 +33,24 @@
     border-color: #2a223d;
   }
   .liquid-glass {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(118, 59, 234, 0.15);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+      0 8px 32px 0 rgba(118, 59, 234, 0.2),
+      0 4px 16px 0 rgba(118, 59, 234, 0.15),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   }
   .dark .liquid-glass {
-    background: rgba(42, 34, 61, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(42, 34, 61, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 8px 32px 0 rgba(91, 19, 236, 0.25),
+      0 4px 16px 0 rgba(91, 19, 236, 0.2),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
-  /* Added nav hover effects */
+
   nav a {
     position: relative;
   }
@@ -58,47 +67,194 @@
   nav a:hover::after {
     width: 100%;
   }
-  </style>
+
+  /* Professional Team Card Styles with Liquid Glass */
+  .team-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      0 8px 32px 0 rgba(91, 19, 236, 0.15),
+      0 4px 16px 0 rgba(91, 19, 236, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+  }
+
+  .team-card:hover::before {
+    opacity: 1;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+  }
+
+  .dark .team-card {
+    background: linear-gradient(135deg, rgba(42, 34, 61, 0.9), rgba(42, 34, 61, 0.7));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 8px 32px 0 rgba(91, 19, 236, 0.25),
+      0 4px 16px 0 rgba(91, 19, 236, 0.2),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  }
+
+  .team-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 
+      0 20px 40px rgba(91, 19, 236, 0.3),
+      0 10px 20px rgba(91, 19, 236, 0.2),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    border-color: rgba(91, 19, 236, 0.4);
+  }
+
+  .dark .team-card:hover {
+    box-shadow: 
+      0 20px 40px rgba(91, 19, 236, 0.4),
+      0 10px 20px rgba(91, 19, 236, 0.3),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+
+  .team-avatar-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.5rem;
+    z-index: 2;
+  }
+
+  .team-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.4s ease;
+    box-shadow: 
+      0 8px 24px rgba(91, 19, 236, 0.2),
+      0 4px 12px rgba(91, 19, 236, 0.15),
+      inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  }
+
+  .dark .team-avatar {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .team-card:hover .team-avatar {
+    border-color: rgba(91, 19, 236, 0.6);
+    box-shadow: 
+      0 12px 32px rgba(91, 19, 236, 0.35),
+      0 6px 16px rgba(91, 19, 236, 0.25),
+      inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+    transform: scale(1.08) rotate(2deg);
+  }
+
+  .team-name {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #120d1b;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+  }
+
+  .dark .team-name {
+    color: #f9f8fc;
+  }
+
+  .team-role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5b13ec;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .team-position {
+    font-size: 0.9375rem;
+    color: #6b6678;
+    line-height: 1.5;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+  }
+
+  .dark .team-position {
+    color: #a09aac;
+  }
+
+  .team-divider {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #5b13ec, transparent);
+    margin: 1rem auto;
+    border-radius: 2px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(91, 19, 236, 0.4);
+  }
+</style>
 <script>
   tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-  colors: {
-    primary: "#5b13ec",
-    "background-light": "#f6f6f8",
-    "background-dark": "#161022",
-    "neutral-light": "#120d1b",
-        "neutral-dark": "#f6f6f8",
-        "subtle-light": "#664c9a",
-        "subtle-dark": "#a899c7",
-        "border-light": "#ebe7f3",
-        "border-dark": "#2a"
-      },
-      fontFamily: {
-        display: ["Inter", "sans-serif"]
-      },
-      borderRadius: {
-        DEFAULT: "0.5rem",
-        lg: "0.75rem",
-        xl: "1rem",
-        full: "9999px"
-      },
-      boxShadow: {
-        soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
-        lg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
-      }
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#5b13ec",
+          "background-light": "#f6f6f8",
+          "background-dark": "#161022",
+          "neutral-light": "#120d1b",
+          "neutral-dark": "#f6f6f8",
+          "subtle-light": "#664c9a",
+          "subtle-dark": "#a899c7",
+          "border-light": "#ebe7f3",
+          "border-dark": "#2a"
+        },
+        fontFamily: {
+          display: ["Inter", "sans-serif"]
+        }
       }
     }
-    };
-  </script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css">
-<link rel="stylesheet" href="assets/nav.css">
-<script src="assets/nav.js" defer></script>
+  };
+</script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-neutral-light dark:text-neutral-dark">
 <div class="animated-bg">
@@ -112,8 +268,7 @@
 <header class="sticky top-0 z-10 border-b border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
 <div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 <div class="flex items-center gap-3">
-
-<a href=home.html class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+<a href="home.html" class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
   AlertRix
 </a>
 </div>
@@ -127,117 +282,135 @@
 </nav>
 <div class="flex items-center gap-4">
 <a href="order page.html" class="glass-effect rounded-lg bg-primary/80 px-5 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-primary">
-        Pre-Order
-      </a>
-<button class="md:hidden">
-
-</button>
+  Pre-Order
+</a>
+<button class="md:hidden"></button>
 </div>
 </div>
 </header>
 
 <main class="flex-grow">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-<div class="max-w-4xl mx-auto">
+<div class="container-fluid px-4 sm:px-8 lg:px-12 py-16 sm:py-24">
+<div class="max-w-[1920px] mx-auto">
 <section class="text-center mb-16">
 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">About AlertRix</h2>
 <p class="text-lg text-muted-light dark:text-muted-dark max-w-3xl mx-auto">
-              AlertRix's vision is to empower seniors to live independently and safely in their homes, supported by cutting-edge AI technology. We are dedicated to enhancing the quality of life for seniors and their families through innovative solutions.
-            </p>
+  AlertRix's vision is to empower seniors to live independently and safely in their homes, supported by cutting-edge AI technology. We are dedicated to enhancing the quality of life for seniors and their families through innovative solutions.
+</p>
 </section>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-<div>
-<h3 class="text-3xl font-bold mb-4">Our Story</h3>
-          <p class="text-muted-light dark:text-muted-dark leading-relaxed">
-            AlertRix was launched in 2025 by a dynamic team, including both compassionate healthcare experts and skilled IoT & development specialists. We recognized the urgent need for elderly care to move beyond traditional methods and adopt a proactive, personalized approach.
-          </p>
+
+<div class="mb-20">
+<div class="max-w-3xl mx-auto mb-16">
+<h3 class="text-3xl font-bold mb-4 text-center">Our Story</h3>
+<p class="text-muted-light dark:text-muted-dark leading-relaxed text-center text-lg">
+  AlertRix was launched in 2025 by a dynamic team, including both compassionate healthcare experts and skilled IoT & development specialists. We recognized the urgent need for elderly care to move beyond traditional methods and adopt a proactive, personalized approach.
+</p>
 </div>
-<div class="liquid-glass p-8 rounded-xl">
-                <h3 class="text-3xl font-bold mb-6 text-center">Meet the Team Members</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                  <div class="flex flex-col items-center gap-3">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
-                      <img alt="Founder 1" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNxx8wJCdicws1FpWLxA3DjuKYpHYUIRc2zSxxYpPlfDBBS_SRoXsdBy6meR1d8Z0mRR8g7n8RWII2qYjavD7MOFtL2SxlPa1bVLqBWnmQlJQH2oTI5ij8HmCEQmwSQidTjnrGUGFnL7Jkxv8Y9tXZleapxSWLOaiTGPlSgoX71mCoelzfbfTzMvKkIivbOrp-jTmb1kmljnjMb8xy6ctAQYwDLaA5zvX89s2rkxZwWRJwmHVMN9YY3I_RcQjaeI8PluQ_Yju8Uc"/>
-                    </div>
-                    <div class="text-center">
-                      <h4 class="text-lg font-bold">Shamra.M</h4>
-                      <p class="text-primary font-semibold text-sm">Firmware and embedded System developer</p>
-                    </div>
-                  </div>
-                  
-                  <div class="flex flex-col items-center gap-3">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
-                      <img alt="Founder 3" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNxx8wJCdicws1FpWLxA3DjuKYpHYUIRc2zSxxYpPlfDBBS_SRoXsdBy6meR1d8Z0mRR8g7n8RWII2qYjavD7MOFtL2SxlPa1bVLqBWnmQlJQH2oTI5ij8HmCEQmwSQidTjnrGUGFnL7Jkxv8Y9tXZleapxSWLOaiTGPlSgoX71mCoelzfbfTzMvKkIivbOrp-jTmb1kmljnjMb8xy6ctAQYwDLaA5zvX89s2rkxZwWRJwmHVMN9YY3I_RcQjaeI8PluQ_Yju8Uc"/>
-                    </div>
-                    <div class="text-center">
-                      <h4 class="text-lg font-bold">Sithuli.S</h4>
-                      <p class="text-primary font-semibold text-sm">QA & UX designer, Treasure</p>
-                    </div>
-                  </div>
-                  
-                  
-                  <div class="flex flex-col items-center gap-3">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
-                      <img alt="Founder 2" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
-                    </div>
-                    <div class="text-center">
-                      <h4 class="text-lg font-bold">Humaid.R</h4>
-                      <p class="text-primary font-semibold text-sm">Backend & ui developer</p>
-                    </div>
-                  </div>
-                  
-                  
-                  <div class="flex flex-col items-center gap-3">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
-                      <img alt="Founder 4" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
-                    </div>
-                    <div class="text-center">
-                      <h4 class="text-lg font-bold">Thivina.H</h4>
-                      <p class="text-primary font-semibold text-sm">Mechanical Prototype designer</p>
-                    </div>
-                  </div>
-                  
-                  <div class="flex flex-col items-center gap-3">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
-                      <img alt="Founder 5" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
-                    </div>
-                    <div class="text-center">
-                      <h4 class="text-lg font-bold">Lakshan.T</h4>
-                      <p class="text-primary font-semibold text-sm">Hardware and Circuit designer</p>
-                    </div>
-                  </div>
-                  
-                  <div class="flex flex-col items-center gap-3">
-                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
-                      <img alt="Founder 6" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
-                    </div>
-                    <div class="text-center">
-                      <h4 class="text-lg font-bold">Bhadrash.C</h4>
-                      <p class="text-primary font-semibold text-sm">FrontEnd & UI Developer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+<div class="liquid-glass p-8 md:p-12 rounded-2xl w-full max-w-full mx-auto relative overflow-hidden shadow-2xl" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(91, 19, 236, 0.2), 0 4px 16px rgba(91, 19, 236, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.6);">
+<div class="absolute inset-0 z-0" style="background: radial-gradient(circle at top left, rgba(91, 19, 236, 0.08), transparent 70%), radial-gradient(circle at bottom right, rgba(91, 19, 236, 0.08), transparent 70%);"></div>
+<h3 class="text-4xl font-bold mb-12 text-center relative z-10">Meet Our Team</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
+  
+  <!-- Team Member 1 -->
+  <div class="team-card">
+    <div class="team-avatar-wrapper">
+      <img alt="Shamra M" class="team-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNxx8wJCdicws1FpWLxA3DjuKYpHYUIRc2zSxxYpPlfDBBS_SRoXsdBy6meR1d8Z0mRR8g7n8RWII2qYjavD7MOFtL2SxlPa1bVLqBWnmQlJQH2oTI5ij8HmCEQmwSQidTjnrGUGFnL7Jkxv8Y9tXZleapxSWLOaiTGPlSgoX71mCoelzfbfTzMvKkIivbOrp-jTmb1kmljnjMb8xy6ctAQYwDLaA5zvX89s2rkxZwWRJwmHVMN9YY3I_RcQjaeI8PluQ_Yju8Uc"/>
+    </div>
+    <h4 class="team-name">Shamra M</h4>
+    <p class="team-role">Firmware Lead</p>
+    <div class="team-divider"></div>
+    <p class="team-position">Firmware & Embedded System Developer</p>
+  </div>
+
+  <!-- Team Member 2 -->
+  <div class="team-card">
+    <div class="team-avatar-wrapper">
+      <img alt="Sithuli S" class="team-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNxx8wJCdicws1FpWLxA3DjuKYpHYUIRc2zSxxYpPlfDBBS_SRoXsdBy6meR1d8Z0mRR8g7n8RWII2qYjavD7MOFtL2SxlPa1bVLqBWnmQlJQH2oTI5ij8HmCEQmwSQidTjnrGUGFnL7Jkxv8Y9tXZleapxSWLOaiTGPlSgoX71mCoelzfbfTzMvKkIivbOrp-jTmb1kmljnjMb8xy6ctAQYwDLaA5zvX89s2rkxZwWRJwmHVMN9YY3I_RcQjaeI8PluQ_Yju8Uc"/>
+    </div>
+    <h4 class="team-name">Sithuli S</h4>
+    <p class="team-role">Design Lead</p>
+    <div class="team-divider"></div>
+    <p class="team-position">QA & UX Designer</p>
+  </div>
+
+  <!-- Team Member 3 -->
+  <div class="team-card">
+    <div class="team-avatar-wrapper">
+      <img alt="Humaid R" class="team-avatar" src="assets/h.jpg"/>
+    </div>
+    <h4 class="team-name">Humaid R</h4>
+    <p class="team-role">Development Lead</p>
+    <div class="team-divider"></div>
+    <p class="team-position">Backend & UI Developer</p>
+  </div>
+
+  <!-- Team Member 4 -->
+  <div class="team-card">
+    <div class="team-avatar-wrapper">
+      <img alt="Thivina H" class="team-avatar" src="assets/P1.png"/>
+    </div>
+    <h4 class="team-name">Thivina H</h4>
+    <p class="team-role">Mechanical Lead</p>
+    <div class="team-divider"></div>
+    <p class="team-position">Mechanical Prototype Designer</p>
+  </div>
+
+  <!-- Team Member 5 -->
+  <div class="team-card">
+    <div class="team-avatar-wrapper">
+      <img alt="Lakshan T" class="team-avatar" src="assets/P1.png"/>
+    </div>
+    <h4 class="team-name">Lakshan T</h4>
+    <p class="team-role">Hardware Lead</p>
+    <div class="team-divider"></div>
+    <p class="team-position">Hardware and Circuit Designer</p>
+  </div>
+
+  <!-- Team Member 6 -->
+  <div class="team-card">
+    <div class="team-avatar-wrapper">
+      <img alt="Bhadrash C" class="team-avatar" src="assets/P1.png"/>
+    </div>
+    <h4 class="team-name">Bhadrash C</h4>
+    <p class="team-role">Frontend Lead</p>
+    <div class="team-divider"></div>
+    <p class="team-position">Frontend & UI Developer</p>
+  </div>
+
 </div>
 </div>
-<section class="liquid-glass rounded-xl p-8 md:p-12">
+</div>
+
+<section class="liquid-glass rounded-xl p-8 md:p-12 mt-16">
 <div class="text-center">
 <h3 class="text-3xl font-bold mb-4">Contact Us</h3>
 <p class="text-muted-light dark:text-muted-dark mb-8 max-w-2xl mx-auto">
-                We'd love to hear from you! Whether you have questions, feedback, or just want to learn more about AlertRix, please reach out.
-              </p>
-<form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
-<label class="sr-only" for="email">Your Email</label>
-<input class="flex-grow w-full px-4 py-3 rounded-lg liquid-glass border-0 placeholder:text-muted-light dark:placeholder:text-muted-dark focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow" id="email" placeholder="Your Email" type="email"/>
-<button class="bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-lg text-sm font-bold transition-colors liquid-glass border-0 shadow-lg" type="submit">
-                  Send
-                </button>
-</form>
+  We'd love to hear from you! Connect with us on social media for the latest updates, or reach out directly through WhatsApp.
+</p>
+<div class="flex justify-center items-center gap-6 max-w-3xl mx-auto">
+  <a href="https://www.instagram.com/alertrix.lk/" target="_blank" rel="noopener noreferrer" 
+     class="group flex flex-col items-center gap-3 p-6 rounded-xl liquid-glass transition-all hover:scale-105">
+    <i class="fab fa-instagram text-4xl text-purple-400 group-hover:text-pink-500"></i>
+    <span class="text-sm font-medium text-center">DM us on Instagram</span>
+  </a>
+  <a href="https://wa.me/94750254442" target="_blank" rel="noopener noreferrer" 
+     class="group flex flex-col items-center gap-3 p-6 rounded-xl liquid-glass transition-all hover:scale-105">
+    <i class="fab fa-whatsapp text-4xl text-purple-400 group-hover:text-green-500"></i>
+    <span class="text-sm font-medium text-center">Chat on WhatsApp</span>
+  </a>
+  <a href="mailto:nevoxioalertrix@gmail.com" target="" rel="noopener noreferrer"
+     class="group flex flex-col items-center gap-3 p-6 rounded-xl liquid-glass transition-all hover:scale-105">
+    <i class="fas fa-envelope text-4xl text-purple-400 group-hover:text-blue-500"></i>
+    <span class="text-sm font-medium text-center">Email Us</span>
+  </a>
+</div>
 </div>
 </section>
 </div>
 </div>
 </main>
+
 <footer class="border-t border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
 <div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
 <div class="flex flex-col items-center gap-8">
@@ -245,12 +418,25 @@
 <a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Product</a>
 <a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="features.html">Features</a>
 <a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Pricing</a>
-<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Support</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="bot works.html">Support</a>
 </div>
+
+<div class="flex items-center justify-start gap-6 my-4">
+  <a href="https://www.instagram.com/alertrix.lk/" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-instagram text-2xl"></i>
+  </a>
+  <a href="https://wa.me/+94750254442" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+</div>
+
 <p class="text-sm text-subtle-light dark:text-subtle-dark">© 2025 AlertRix. All rights reserved.</p>
 </div>
 </div>
 </footer>
 </div>
 
-</body></html>
+</body>
+</html>
