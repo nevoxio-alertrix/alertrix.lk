@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About AlertRix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/nav.css">
+<script src="assets/nav.js" defer></script>
+<style>
+  .text-foreground {
+    color: #120d1b;
+  }
+  .dark .text-foreground {
+    color: #f9f8fc;
+  }
+  .text-foreground-muted {
+    color: #6b6678;
+  }
+  .dark .text-foreground-muted {
+    color: #a09aac;
+  }
+  .border-subtle {
+    border-color: #ebe7f3;
+  }
+  .dark .border-subtle {
+    border-color: #2a223d;
+  }
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(118, 59, 234, 0.15);
+  }
+  .dark .liquid-glass {
+    background: rgba(42, 34, 61, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  /* Added nav hover effects */
+  nav a {
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #5b13ec;
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  </style>
+<script>
+  tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+  colors: {
+    primary: "#5b13ec",
+    "background-light": "#f6f6f8",
+    "background-dark": "#161022",
+    "neutral-light": "#120d1b",
+        "neutral-dark": "#f6f6f8",
+        "subtle-light": "#664c9a",
+        "subtle-dark": "#a899c7",
+        "border-light": "#ebe7f3",
+        "border-dark": "#2a"
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"]
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        full: "9999px"
+      },
+      boxShadow: {
+        soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+        lg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+      }
+      }
+    }
+    };
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/nav.css">
+<script src="assets/nav.js" defer></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-light dark:text-neutral-dark">
+<div class="animated-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div id="global-nav"></div>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 border-b border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+
+<a href=home.html class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+  AlertRix
+</a>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="about bot.html">Product</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="features.html">Features</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="order page.html">Pricing</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="bot works.html">Support</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="reason.html">Reason</a>
+<a class="nav-link active text-sm font-medium transition-colors hover:text-primary" href="about.html">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="order page.html" class="glass-effect rounded-lg bg-primary/80 px-5 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-primary">
+        Pre-Order
+      </a>
+<button class="md:hidden">
+
+</button>
+</div>
+</div>
+</header>
+
+<main class="flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+<div class="max-w-4xl mx-auto">
+<section class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">About AlertRix</h2>
+<p class="text-lg text-muted-light dark:text-muted-dark max-w-3xl mx-auto">
+              AlertRix's vision is to empower seniors to live independently and safely in their homes, supported by cutting-edge AI technology. We are dedicated to enhancing the quality of life for seniors and their families through innovative solutions.
+            </p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+<div>
+<h3 class="text-3xl font-bold mb-4">Our Story</h3>
+          <p class="text-muted-light dark:text-muted-dark leading-relaxed">
+            AlertRix was launched in 2025 by a dynamic team, including both compassionate healthcare experts and skilled IoT & development specialists. We recognized the urgent need for elderly care to move beyond traditional methods and adopt a proactive, personalized approach.
+          </p>
+</div>
+<div class="liquid-glass p-8 rounded-xl">
+                <h3 class="text-3xl font-bold mb-6 text-center">Meet the Team Members</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
+                      <img alt="Founder 1" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNxx8wJCdicws1FpWLxA3DjuKYpHYUIRc2zSxxYpPlfDBBS_SRoXsdBy6meR1d8Z0mRR8g7n8RWII2qYjavD7MOFtL2SxlPa1bVLqBWnmQlJQH2oTI5ij8HmCEQmwSQidTjnrGUGFnL7Jkxv8Y9tXZleapxSWLOaiTGPlSgoX71mCoelzfbfTzMvKkIivbOrp-jTmb1kmljnjMb8xy6ctAQYwDLaA5zvX89s2rkxZwWRJwmHVMN9YY3I_RcQjaeI8PluQ_Yju8Uc"/>
+                    </div>
+                    <div class="text-center">
+                      <h4 class="text-lg font-bold">Shamra.M</h4>
+                      <p class="text-primary font-semibold text-sm">Leader</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
+                      <img alt="Founder 3" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNxx8wJCdicws1FpWLxA3DjuKYpHYUIRc2zSxxYpPlfDBBS_SRoXsdBy6meR1d8Z0mRR8g7n8RWII2qYjavD7MOFtL2SxlPa1bVLqBWnmQlJQH2oTI5ij8HmCEQmwSQidTjnrGUGFnL7Jkxv8Y9tXZleapxSWLOaiTGPlSgoX71mCoelzfbfTzMvKkIivbOrp-jTmb1kmljnjMb8xy6ctAQYwDLaA5zvX89s2rkxZwWRJwmHVMN9YY3I_RcQjaeI8PluQ_Yju8Uc"/>
+                    </div>
+                    <div class="text-center">
+                      <h4 class="text-lg font-bold">Sithuli.S</h4>
+                      <p class="text-primary font-semibold text-sm"></p>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
+                      <img alt="Founder 2" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
+                    </div>
+                    <div class="text-center">
+                      <h4 class="text-lg font-bold">Humaid.R</h4>
+                      <p class="text-primary font-semibold text-sm"></p>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
+                      <img alt="Founder 4" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
+                    </div>
+                    <div class="text-center">
+                      <h4 class="text-lg font-bold">Thivina.H</h4>
+                      <p class="text-primary font-semibold text-sm"></p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
+                      <img alt="Founder 5" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
+                    </div>
+                    <div class="text-center">
+                      <h4 class="text-lg font-bold">Lakshan.T</h4>
+                      <p class="text-primary font-semibold text-sm"></p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col items-center gap-3">
+                    <div class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 liquid-glass p-1">
+                      <img alt="Founder 6" class="w-full h-full object-cover rounded-full bg-gradient-to-br from-primary/20 to-primary/40" src="assets/P1.png"/>
+                    </div>
+                    <div class="text-center">
+                      <h4 class="text-lg font-bold">Bhadrash.C</h4>
+                      <p class="text-primary font-semibold text-sm"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</div>
+</div>
+<section class="liquid-glass rounded-xl p-8 md:p-12">
+<div class="text-center">
+<h3 class="text-3xl font-bold mb-4">Contact Us</h3>
+<p class="text-muted-light dark:text-muted-dark mb-8 max-w-2xl mx-auto">
+                We'd love to hear from you! Whether you have questions, feedback, or just want to learn more about AlertRix, please reach out.
+              </p>
+<form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+<label class="sr-only" for="email">Your Email</label>
+<input class="flex-grow w-full px-4 py-3 rounded-lg liquid-glass border-0 placeholder:text-muted-light dark:placeholder:text-muted-dark focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow" id="email" placeholder="Your Email" type="email"/>
+<button class="bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-lg text-sm font-bold transition-colors liquid-glass border-0 shadow-lg" type="submit">
+                  Send
+                </button>
+</form>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="border-t border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center gap-8">
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Product</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="features.html">Features</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Pricing</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Support</a>
+</div>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">© 2025 AlertRix. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
