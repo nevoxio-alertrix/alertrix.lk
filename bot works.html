@@ -8,6 +8,7 @@
 <link rel="icon" type="image/x-icon" href="assets/LOGO.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style>
   .text-foreground {
@@ -39,7 +40,6 @@
     background: rgba(42, 34, 61, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  /* Added nav hover effects */
   nav a {
     position: relative;
   }
@@ -56,7 +56,58 @@
   nav a:hover::after {
     width: 100%;
   }
-  </style>
+  
+  /* Step animation styles */
+  .step-item {
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .step-number {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #5b13ec 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .step-title {
+    transition: all 0.5s ease;
+  }
+  
+  .step-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: all 0.6s ease;
+  }
+  
+  .step-item.animate-in .step-description {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 0.5rem;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(91, 19, 236, 0.3);
+  }
+  
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(91, 19, 236, 0.1);
+  }
+  
+  .dark .glassmorphism {
+    background: rgba(42, 34, 61, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+</style>
 <script>
   tailwind.config = {
   darkMode: "class",
@@ -89,7 +140,7 @@
       }
     }
     };
-  </script>
+</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
@@ -110,8 +161,8 @@
 <header class="sticky top-0 z-10 border-b border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
 <div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 <div class="flex items-center gap-3">
-
-<a href=index.html class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+<img src="assets/logo.png" alt="AlertRix Logo" class="h-14 w-14 object-contain">
+<a href="index.html" class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
   AlertRix
 </a>
 </div>
@@ -128,7 +179,6 @@
         Pre-Order
       </a>
 <button class="md:hidden">
-
 </button>
 </div>
 </div>
@@ -165,43 +215,36 @@
               </p>
 </div>
 <div class="relative">
-<div aria-hidden="true" class="absolute left-14 top-7 h-[calc(100%-5rem)] w-1 bg-gradient-to-b from-primary/80 to-primary/40 glow"></div>
 <div class="relative grid gap-16">
-<div class="relative flex items-start gap-8 p-6 rounded-xl glassmorphism">
-<div class="z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-background-light dark:bg-background-dark border-4 border-primary shadow-lg">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-<span class="material-symbols-outlined">medication</span>
+<div class="step-item relative flex items-start gap-8 p-6 rounded-xl glassmorphism">
+<div class="z-10 flex h-28 w-28 shrink-0 items-center justify-center">
+<div class="step-number">1</div>
 </div>
-</div>
-<div class="pt-2">
-<h4 class="text-xl font-bold text-gray-900 dark:text-white">1. Fill the AlertRix</h4>
-<p class="mt-2 text-gray-600 dark:text-gray-300">
+<div class="pt-6">
+<h4 class="step-title text-xl font-bold text-gray-900 dark:text-white">Fill the AlertRix</h4>
+<p class="step-description text-gray-600 dark:text-gray-300">
                       Easily load your prescribed medications into the AlertRix's secure, organized compartments.
                     </p>
 </div>
 </div>
-<div class="relative flex items-start gap-8 p-6 rounded-xl glassmorphism">
-<div class="z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-background-light dark:bg-background-dark border-4 border-primary shadow-lg">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-<span class="material-symbols-outlined">notifications_active</span>
+<div class="step-item relative flex items-start gap-8 p-6 rounded-xl glassmorphism">
+<div class="z-10 flex h-28 w-28 shrink-0 items-center justify-center">
+<div class="step-number">2</div>
 </div>
-</div>
-<div class="pt-2">
-<h4 class="text-xl font-bold text-gray-900 dark:text-white">2. Bot Reminds</h4>
-<p class="mt-2 text-gray-600 dark:text-gray-300">
+<div class="pt-6">
+<h4 class="step-title text-xl font-bold text-gray-900 dark:text-white">Bot Reminds</h4>
+<p class="step-description text-gray-600 dark:text-gray-300">
                       The friendly bot provides clear audio and visual reminders when it's time to take a medication.
                     </p>
 </div>
 </div>
-<div class="relative flex items-start gap-8 p-6 rounded-xl glassmorphism">
-<div class="z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-background-light dark:bg-background-dark border-4 border-primary shadow-lg">
-<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-<span class="material-symbols-outlined">monitoring</span>
+<div class="step-item relative flex items-start gap-8 p-6 rounded-xl glassmorphism">
+<div class="z-10 flex h-28 w-28 shrink-0 items-center justify-center">
+<div class="step-number">3</div>
 </div>
-</div>
-<div class="pt-2">
-<h4 class="text-xl font-bold text-gray-900 dark:text-white">3. App Tracks</h4>
-<p class="mt-2 text-gray-600 dark:text-gray-300">
+<div class="pt-6">
+<h4 class="step-title text-xl font-bold text-gray-900 dark:text-white">App Tracks</h4>
+<p class="step-description text-gray-600 dark:text-gray-300">
                       Caregivers and family members can easily monitor medication adherence and get alerts through our secure app.
                     </p>
 </div>
@@ -236,4 +279,31 @@
 </div>
 </footer>
 </div>
+
+<script>
+// Intersection Observer for scroll animations
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      // Add staggered delay for each step
+      setTimeout(() => {
+        entry.target.classList.add('animate-in');
+      }, index * 200);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe all step items
+document.addEventListener('DOMContentLoaded', () => {
+  const stepItems = document.querySelectorAll('.step-item');
+  stepItems.forEach(item => observer.observe(item));
+});
+</script>
+
 </body></html>
