@@ -110,10 +110,10 @@
 <header class="sticky top-0 z-10 border-b border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
 <div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 <div class="flex items-center gap-3">
-
-<a href=index.html class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
-  AlertRix
-</a>
+  <img src="assets/logo.png" alt="AlertRix Logo" class="h-14 w-14 object-contain">
+  <a href="index.html" class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+    AlertRix
+  </a>
 </div>
 <nav class="hidden items-center gap-8 md:flex">
 <a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="about bot.html">Product</a>
@@ -146,24 +146,23 @@
 <div class="aspect-w-16 aspect-h-9 w-full bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop");height: 400px;'></div>
 </div>
 
-<!-- Pricing and Form Section - Side by Side -->
+<!-- Order and Form Section - Side by Side -->
 <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
-<!-- Pricing Column -->
+<!-- Order Column -->
 <div>
-<h2 class="text-3xl font-bold tracking-tight text-background-dark dark:text-background-light mb-6">Pricing</h2>
+<h2 class="text-3xl font-bold tracking-tight text-background-dark dark:text-background-light mb-6">Order Now!</h2>
+<p class="text-3xl font-black text-background-dark dark:text-background-light">Starting at $299</p>
 <div class="rounded-2xl p-6 shadow-glass dark:shadow-glass-dark glassmorphism">
 <div class="flex flex-col gap-4">
 <div class="flex items-center justify-between">
 <h3 class="text-lg font-bold text-background-dark dark:text-background-light">AlertRix</h3>
-<p class="text-4xl font-black text-background-dark dark:text-background-light">$299</p>
+
 </div>
+<!-- Order Column -->
+
 <p class="text-sm text-background-dark/60 dark:text-background-light/60">One-time payment</p>
-<button class="mt-2 flex h-10 w-full items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-primary transition-colors hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 backdrop-blur-sm">Pre-Order Now</button>
+<button class="mt-2 flex h-10 w-full items-center justify-center rounded-xl bg-primary text-sm font-bold text-white transition-all hover:bg-primary/90 shadow-lg shadow-primary/30 backdrop-blur-sm">Pre-Order Now</button>
 <div class="mt-4 space-y-3 border-t border-primary/20 pt-4 dark:border-primary/20">
-<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
-<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
-<span>AI-powered medication reminders</span>
-</div>
 <div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
 <svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
 <span>24/7 monitoring and alerts</span>
@@ -182,7 +181,56 @@
 </div>
 <div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
 <svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
-<span>Weekly summarizations of taken pills</span>
+<span>Limited health report uploads</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Chatbot limited</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Premium Plan -->
+<div class="rounded-2xl p-6 shadow-glass dark:shadow-glass-dark glassmorphism border-2 border-primary/30">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-lg font-bold text-background-dark dark:text-background-light">AlertRix Premium</h3>
+<span class="inline-block mt-1 px-3 py-1 text-xs font-bold text-white bg-primary rounded-full">RECOMMENDED</span>
+</div>
+
+</div>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">One-time payment</p>
+<button class="mt-2 flex h-10 w-full items-center justify-center rounded-xl bg-primary text-sm font-bold text-white transition-all hover:bg-primary/90 shadow-lg shadow-primary/30 backdrop-blur-sm">Pre-Order Now</button>
+<div class="mt-4 space-y-3 border-t border-primary/20 pt-4 dark:border-primary/20">
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>24/7 monitoring and alerts</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Voice interaction and support</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Customizable care plans</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Remote access for family members</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Weekly summarizations of missed/taken pills</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Health report uploads</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-background-dark dark:text-background-light">
+<svg class="text-primary flex-shrink-0" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Chatbot unlimited</span>
 </div>
 </div>
 </div>
@@ -268,7 +316,7 @@
 <div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
 <a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Product</a>
 <a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="features.html">Features</a>
-<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Pricing</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Order</a>
 <a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="bot works.html">Support</a>
 </div>
 <p class="text-sm text-subtle-light dark:text-subtle-dark">© 2025 AlertRix. All rights reserved.</p>
