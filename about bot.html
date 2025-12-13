@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AlertRix - Product </title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="assets/LOGO.jpg">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+  .text-foreground {
+    color: #120d1b;
+  }
+  .dark .text-foreground {
+    color: #f9f8fc;
+  }
+  .text-foreground-muted {
+    color: #6b6678;
+  }
+  .dark .text-foreground-muted {
+    color: #a09aac;
+  }
+  .border-subtle {
+    border-color: #ebe7f3;
+  }
+  .dark .border-subtle {
+    border-color: #2a223d;
+  }
+  
+  /* macOS 26 Ultra Liquid Glass Effect */
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(100px) saturate(200%) brightness(1.15) contrast(1.1);
+    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.15) contrast(1.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.2),
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.3),
+      inset 0 3px 6px rgba(255, 255, 255, 0.2),
+      0 0 0 0.5px rgba(91, 19, 236, 0.1);
+    position: relative;
+    overflow: visible;
+  }
+  
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 55%;
+    background: linear-gradient(180deg, 
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
+  }
+  
+  .liquid-glass::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    padding: 3px;
+    background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(91, 19, 236, 0.05) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.2) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.9;
+    animation: borderGlow 4s ease-in-out infinite;
+  }
+  
+  @keyframes borderGlow {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+  }
+  
+  .dark .liquid-glass {
+    background: rgba(42, 34, 61, 0.2);
+    backdrop-filter: blur(100px) saturate(200%) brightness(1.08) contrast(1.15);
+    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.08) contrast(1.15);
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.5),
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.15),
+      inset 0 3px 6px rgba(255, 255, 255, 0.1),
+      0 0 0 0.5px rgba(91, 19, 236, 0.2);
+  }
+  
+  /* macOS 26 Premium Pill Navigation */
+  nav {
+    border-radius: 50px !important;
+    padding: 0.6rem 1.6rem !important;
+    transition: all 0.6s cubic-bezier(0.34, 1.8, 0.64, 1);
+    position: relative;
+    z-index: 2;
+  }
+  
+  
+  
+  .dark nav:hover {
+    background: rgba(42, 34, 61, 0.3);
+    box-shadow: 
+      0 20px 64px rgba(0, 0, 0, 0.6),
+      0 6px 16px rgba(0, 0, 0, 0.4),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.25),
+      inset 0 3px 8px rgba(255, 255, 255, 0.15),
+      0 0 0 1px rgba(91, 19, 236, 0.3);
+  }
+  
+  /* Ultra Premium Pill-shaped Nav Links */
+  nav a {
+    position: relative;
+    padding: 0.7rem 1.4rem !important;
+    border-radius: 30px !important;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px) brightness(1.08) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) brightness(1.08) saturate(150%);
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 3px 12px rgba(0, 0, 0, 0.1),
+      inset 0 1px 3px rgba(255, 255, 255, 0.2),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.12);
+    transition: all 0.4s cubic-bezier(0.34, 1.8, 0.64, 1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  
+  .dark nav a {
+    background: rgba(255, 255, 255, 0.06);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 3px 12px rgba(0, 0, 0, 0.2),
+      inset 0 1px 3px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Top gradient highlight */
+  nav a::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 55%;
+    background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 30px 30px 0 0;
+    z-index: 1;
+  }
+  
+  /* Shimmer effect */
+  nav a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: linear-gradient(125deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    width: 300%;
+    height: 100%;
+    bottom: auto;
+    left: -100%;
+  }
+  
+  nav a:hover::before {
+    opacity: 1;
+  }
+  
+  nav a:hover::after {
+    opacity: 1;
+    animation: liquidShimmer 2s ease-in-out infinite;
+  }
+  
+  @keyframes liquidShimmer {
+    0% { 
+      left: -100%;
+      opacity: 0;
+    }
+    50% { 
+      opacity: 1;
+    }
+    100% { 
+      left: 100%;
+      opacity: 0;
+    }
+  }
+  
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 
+      0 10px 32px rgba(0, 0, 0, 0.2),
+      0 3px 10px rgba(0, 0, 0, 0.12),
+      inset 0 2px 6px rgba(255, 255, 255, 0.3),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.25),
+      0 0 0 2px rgba(91, 19, 236, 0.1);
+  }
+  
+  .dark nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 10px 32px rgba(0, 0, 0, 0.4),
+      0 3px 10px rgba(0, 0, 0, 0.25),
+      inset 0 2px 6px rgba(255, 255, 255, 0.18),
+      0 0 0 2px rgba(91, 19, 236, 0.2);
+  }
+  
+  nav a:active {
+    transform: translateY(-1px) scale(1.03);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Active link state */
+  nav a.active {
+    background: rgba(91, 19, 236, 0.25);
+    border-color: rgba(91, 19, 236, 0.4);
+    box-shadow: 
+      0 4px 16px rgba(91, 19, 236, 0.3),
+      inset 0 2px 6px rgba(255, 255, 255, 0.25),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark nav a.active {
+    background: rgba(91, 19, 236, 0.35);
+    border-color: rgba(91, 19, 236, 0.5);
+    box-shadow: 
+      0 4px 16px rgba(91, 19, 236, 0.5),
+      inset 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Micro-interaction: Ripple effect on click */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  nav a:active::before {
+    animation: ripple 0.6s ease-out;
+  }
+</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#5b13ec",
+          "background-light": "#f6f6f8",
+          "background-dark": "#161022",
+          "neutral-light": "#120d1b",
+          "neutral-dark": "#f6f6f8",
+          "subtle-light": "#664c9a",
+          "subtle-dark": "#a899c7",
+          "border-light": "#ebe7f3",
+          "border-dark": "#2a223d"
+        },
+        fontFamily: {
+          display: ["Inter", "sans-serif"]
+        },
+        borderRadius: {
+          DEFAULT: "0.5rem",
+          lg: "0.75rem",
+          xl: "1rem",
+          full: "9999px"
+        },
+        boxShadow: {
+          soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+          lg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+        }
+      }
+    }
+  };
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/nav.css">
+<link rel="stylesheet" href="assets/background-animation.css">
+<script src="assets/nav.js" defer></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-light dark:text-neutral-dark">
+<elevenlabs-convai agent-id="agent_5601k9av43nrf57v6xgzpjbdpssy"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<div class="animated-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div id="global-nav"></div>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-3 z-10 mx-30 mt-4 rounded-full border border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10 padding-0">
+<div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+<img src="assets/logo.png" alt="AlertRix Logo" class="h-14 w-14 object-contain">
+<a href="index.html" class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+  AlertRix
+</a>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium transition-colors hover:text-primary active" href="about bot.html">Product</a>
+<a class="text-sm font-medium transition-colors hover:text-primary" href="features.html">Features</a>
+<a class="text-sm font-medium transition-colors hover:text-primary" href="order page.html">Order</a>
+<a class="text-sm font-medium transition-colors hover:text-primary " href="bot works.html">Support</a>
+
+<a class="text-sm font-medium transition-colors hover:text-primary" href="about.html" >About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="order page.html" class="glass-effect rounded-lg bg-primary/80 px-5 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-primary">
+        Pre-Order
+      </a>
+<button class="md:hidden">
+
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-4 py-12 md:py-20">
+<div class="max-w-4xl mx-auto">
+<section class="mb-16 @container">
+<div class="grid gap-8 @[768px]:grid-cols-2 @[768px]:items-center">
+<div class="order-2 @[768px]:order-1 liquid-glass p-8 rounded-xl">
+<h1 class="text-4xl @[480px]:text-5xl font-black tracking-tighter text-foreground mb-4">Empowering Health with AI-Driven Medication Management</h1>
+<p class="text-lg text-foreground-muted mb-6">We're dedicated to solving the critical challenge of medication mismanagement among the elderly. Our flagship product, AlertRix, combines cutting-edge AI with intuitive voice reminders to ensure timely and accurate medication adherence.</p>
+<button class="rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105">Learn More</button>
+</div>
+<div class="order-1 @[768px]:order-2">
+<div class="aspect-square w-full rounded-xl liquid-glass p-2">
+<div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4KK2lHcCUP0e907pa9HCuJACwN8y7gHdWqSmxiS5-xmpMzFEGWxZrSGpv0MUR1x7_R3cWAHUAmZ6W--wDlQGdbdHjUP8L99hWxtGLvjxwfA0-jDv84xnzkz54irNiNwYHqpDGWKz0o9q2jAnV3UmyDG1lF80rLKJN2lELH2Fjpd7Rqtd_lPrCBNorfC4GEHh5DliCxY0oOrgF9IDVoAfCwxdXQSeaXrIXEWchjFJulrwErwJj3dUblfrzlsE9YHr9rcYFrFrQHnY");'></div>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-12">
+<div class="liquid-glass p-8 rounded-xl">
+<h2 class="text-3xl font-bold tracking-tight text-foreground mb-4">The Problem: Medication Mismanagement</h2>
+<p class="text-foreground-muted leading-relaxed">Medication mismanagement is a widespread issue, particularly affecting seniors. It leads to adverse health outcomes, increased healthcare costs, and diminished quality of life. Common challenges include forgetting doses, taking incorrect dosages, and confusion about medication schedules.</p>
+</div>
+<div class="liquid-glass p-8 rounded-xl">
+<h2 class="text-3xl font-bold tracking-tight text-foreground mb-4">Our Solution: AlertRix</h2>
+<p class="text-foreground-muted leading-relaxed mb-6">AlertRix is an AI-powered companion designed to simplify medication management. It uses voice reminders to guide users through their medication schedules, ensuring they take the right medication at the right time. The bot's AI adapts to individual needs, providing personalized support and peace of mind for both users and their caregivers.</p>
+<div class="relative aspect-video w-full rounded-xl overflow-hidden group liquid-glass p-2">
+<div class="absolute inset-2 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOiSUpse0eIo-7jmOqZ1Ks17VudHFAMt1tJX_WglKkf9ok0NpZXnKMA6x5Kb9M6zff124A_Ic6TeNuY12C2tJVQl-julWd8f_4583BgNTuQZRXRThMPSOd3leJSnb4hPlfMDjoSisOiwARkyychXHap5a4KLAb6dr9w5uKqzS55Ei5P6fXiS2queuOi4598P8HXwl2J4AXnBhwxBhosL130ypOAN52fapuyMb84XIrAQ6eNuvHGL74OPJsfS4MS8xaozhOnG2_c7Y");'></div>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<button class="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition-all hover:bg-white/30 hover:scale-110">
+<svg fill="currentColor" height="32" viewBox="0 0 256 256" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<div class="liquid-glass p-8 rounded-xl">
+<h2 class="text-3xl font-bold tracking-tight text-foreground mb-4">Our Mission</h2>
+<p class="text-foreground-muted leading-relaxed">AlertRix's mission is to leverage technology to improve the health and well-being of seniors. We believe that AI can play a vital role in enhancing medication adherence, promoting independence, and reducing the burden on caregivers. Our commitment is to create solutions that are both effective and user-friendly, making a positive impact on the lives of those we serve.</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="border-t border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex items-center justify-center gap-6 mb-6">
+  <a href="https://www.instagram.com/alertrix.lk/" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-instagram text-2xl"></i>
+  </a>
+  <a href="https://wa.me/+94750254442" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+</div>
+<div class="flex flex-col items-center gap-8">
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Product</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="features.html">Features</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Order</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="bot works.html">Support</a>
+</div>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">© 2025 AlertRix. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
