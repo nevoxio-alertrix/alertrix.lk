@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sitemap - AlertRix</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="assets/LOGO.jpg">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+  .text-foreground {
+    color: #120d1b;
+  }
+  .dark .text-foreground {
+    color: #f9f8fc;
+  }
+  .text-foreground-muted {
+    color: #6b6678;
+  }
+  .dark .text-foreground-muted {
+    color: #a09aac;
+  }
+  .border-subtle {
+    border-color: #ebe7f3;
+  }
+  .dark .border-subtle {
+    border-color: #2a223d;
+  }
+  
+  /* macOS 26 Ultra Liquid Glass Effect */
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(100px) saturate(200%) brightness(1.15) contrast(1.1);
+    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.15) contrast(1.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.2),
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.3),
+      inset 0 3px 6px rgba(255, 255, 255, 0.2),
+      0 0 0 0.5px rgba(91, 19, 236, 0.1);
+    position: relative;
+    overflow: visible;
+  }
+  
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 55%;
+    background: linear-gradient(180deg, 
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
+  }
+  
+  .liquid-glass::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    padding: 3px;
+    background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(91, 19, 236, 0.05) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.2) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.9;
+    animation: borderGlow 4s ease-in-out infinite;
+  }
+  
+  @keyframes borderGlow {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+  }
+  
+  .dark .liquid-glass {
+    background: rgba(42, 34, 61, 0.2);
+    backdrop-filter: blur(100px) saturate(200%) brightness(1.08) contrast(1.15);
+    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.08) contrast(1.15);
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.5),
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.15),
+      inset 0 3px 6px rgba(255, 255, 255, 0.1),
+      0 0 0 0.5px rgba(91, 19, 236, 0.2);
+  }
+  
+  .sitemap-section {
+    transition: all 0.3s ease;
+  }
+  
+  .sitemap-section:hover {
+    transform: translateY(-4px);
+  }
+  
+  .sitemap-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .sitemap-link:hover {
+    background: rgba(91, 19, 236, 0.1);
+    transform: translateX(8px);
+  }
+  
+  .sitemap-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(91, 19, 236, 0.1), rgba(91, 19, 236, 0.05));
+    color: #5b13ec;
+    font-size: 18px;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #5b13ec;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>
+<script>
+  tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+  colors: {
+    primary: "#5b13ec",
+    "background-light": "#f6f6f8",
+    "background-dark": "#161022",
+    "neutral-light": "#120d1b",
+        "neutral-dark": "#f6f6f8",
+        "subtle-light": "#664c9a",
+        "subtle-dark": "#a899c7",
+        "border-light": "#ebe7f3",
+        "border-dark": "#2a"
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"]
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        full: "9999px"
+      },
+      boxShadow: {
+        soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+        lg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+      }
+      }
+    }
+    };
+  </script>
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/nav.css">
+<link rel="stylesheet" href="assets/background-animation.css">
+<script src="assets/nav.js" defer></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-light dark:text-neutral-dark">
+<div class="animated-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div id="global-nav"></div>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-3 z-10 mx-2 sm:mx-6 md:mx-16 lg:mx-32 xl:mx-40 mt-4 rounded-lg border border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10 p-0">
+<div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+  <img src="assets/logo.png" alt="AlertRix Logo" class="h-14 w-14 object-contain">
+  <a href="index.html" class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+    AlertRix
+  </a>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="about bot.html">Product</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="features.html">Features</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="order page.html">Order</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="bot works.html">Support</a>
+
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="about.html">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="order page.html" class="glass-effect rounded-lg bg-primary/80 px-5 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-primary">
+        Pre-Order
+      </a>
+<button class="md:hidden"></button>
+</div>
+</div>
+</header>
+
+<main class="flex-grow">
+<div class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+<div class="max-w-5xl mx-auto">
+<!-- Header -->
+<div class="text-center mb-16">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+  Site Map
+</h1>
+<p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+  Navigate through all pages and sections of AlertRix to find exactly what you're looking for.
+</p>
+</div>
+
+<!-- Sitemap Grid -->
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  
+  <!-- Main Pages Section -->
+  <div class="liquid-glass p-6 rounded-xl sitemap-section">
+    <h2 class="section-title">
+      <i class="fas fa-home"></i>
+      Main Pages
+    </h2>
+    <div class="space-y-2">
+      <a href="index.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-house"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Home</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">Welcome page</div>
+        </div>
+      </a>
+      <a href="about bot.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Product</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">About AlertRix</div>
+        </div>
+      </a>
+      <a href="about.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <div>
+          <div class="font-semibold">About Us</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">Our team & story</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Product Information -->
+  <div class="liquid-glass p-6 rounded-xl sitemap-section">
+    <h2 class="section-title">
+      <i class="fas fa-info-circle"></i>
+      Product Info
+    </h2>
+    <div class="space-y-2">
+      <a href="features.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Features</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">Key capabilities</div>
+        </div>
+      </a>
+      <a href="bot works.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-gear"></i>
+        </div>
+        <div>
+          <div class="font-semibold">How It Works</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">Product guide</div>
+        </div>
+      </a>
+      <a href="reason.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Why Choose Us</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">Our advantages</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Purchase & Support -->
+  <div class="liquid-glass p-6 rounded-xl sitemap-section">
+    <h2 class="section-title">
+      <i class="fas fa-shopping-cart"></i>
+      Purchase
+    </h2>
+    <div class="space-y-2">
+      <a href="order page.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-credit-card"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Order</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">Pre-order now</div>
+        </div>
+      </a>
+      <a href="feedback.html" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Testimonials</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">User reviews</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Social & Contact -->
+  <div class="liquid-glass p-6 rounded-xl sitemap-section md:col-span-2 lg:col-span-3">
+    <h2 class="section-title">
+      <i class="fas fa-link"></i>
+      Connect With Us
+    </h2>
+    <div class="grid gap-4 md:grid-cols-3">
+      <a href="https://www.instagram.com/alertrix.lk/" target="_blank" rel="noopener noreferrer" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Instagram</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">@alertrix.lk</div>
+        </div>
+      </a>
+      <a href="https://wa.me/94750254442" target="_blank" rel="noopener noreferrer" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div>
+          <div class="font-semibold">WhatsApp</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">+94 75 025 4442</div>
+        </div>
+      </a>
+      <a href="mailto:nevoxioalertrix@gmail.com" class="sitemap-link">
+        <div class="sitemap-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div>
+          <div class="font-semibold">Email</div>
+          <div class="text-sm text-gray-500 dark:text-gray-400">Contact us</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Quick Links Section -->
+<div class="mt-16 liquid-glass p-8 rounded-xl text-center">
+  <h3 class="text-2xl font-bold mb-4">Need Help?</h3>
+  <p class="text-gray-600 dark:text-gray-300 mb-6">
+    Can't find what you're looking for? Our team is here to assist you.
+  </p>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="order page.html" class="rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105">
+      Pre-Order Now
+    </a>
+    <a href="bot works.html" class="rounded-lg bg-primary/10 px-6 py-3 text-base font-bold text-primary transition-colors hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30">
+      Learn More
+    </a>
+  </div>
+</div>
+
+</div>
+</div>
+</main>
+
+<footer class="border-t border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex items-center justify-center gap-6 mb-6">
+  <a href="https://www.instagram.com/alertrix.lk/" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-instagram text-2xl"></i>
+  </a>
+  <a href="https://wa.me/+94750254442" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+  <a href="https://linkedin.com/company/alertrix/" target="_blank" rel="noopener noreferrer"
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-linkedin text-2xl"></i>
+  </a>
+</div>
+<div class="flex flex-col items-center gap-8">
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Product</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="features.html">Features</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Order</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="bot works.html">Support</a>
+</div>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">© 2025 AlertRix. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

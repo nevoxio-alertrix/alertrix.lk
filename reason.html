@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AlertRix - Reason </title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="assets/LOGO.jpg">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+  .text-foreground {
+    color: #120d1b;
+  }
+  .dark .text-foreground {
+    color: #f9f8fc;
+  }
+  .text-foreground-muted {
+    color: #6b6678;
+  }
+  .dark .text-foreground-muted {
+    color: #a09aac;
+  }
+  .border-subtle {
+    border-color: #ebe7f3;
+  }
+  .dark .border-subtle {
+    border-color: #2a223d;
+  }
+  
+  /* macOS 26 Ultra Liquid Glass Effect */
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(100px) saturate(200%) brightness(1.15) contrast(1.1);
+    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.15) contrast(1.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.2),
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.3),
+      inset 0 3px 6px rgba(255, 255, 255, 0.2),
+      0 0 0 0.5px rgba(91, 19, 236, 0.1);
+    position: relative;
+    overflow: visible;
+  }
+  
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 55%;
+    background: linear-gradient(180deg, 
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
+  }
+  
+  .liquid-glass::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    padding: 3px;
+    background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(91, 19, 236, 0.05) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.2) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.9;
+    animation: borderGlow 4s ease-in-out infinite;
+  }
+  
+  @keyframes borderGlow {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+  }
+  
+  .dark .liquid-glass {
+    background: rgba(42, 34, 61, 0.2);
+    backdrop-filter: blur(100px) saturate(200%) brightness(1.08) contrast(1.15);
+    -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(1.08) contrast(1.15);
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.5),
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 0 0 1.5px rgba(255, 255, 255, 0.15),
+      inset 0 3px 6px rgba(255, 255, 255, 0.1),
+      0 0 0 0.5px rgba(91, 19, 236, 0.2);
+  }
+  </style>
+<script>
+  tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+  colors: {
+    primary: "#5b13ec",
+    "background-light": "#f6f6f8",
+    "background-dark": "#161022",
+    "neutral-light": "#120d1b",
+        "neutral-dark": "#f6f6f8",
+        "subtle-light": "#664c9a",
+        "subtle-dark": "#a899c7",
+        "border-light": "#ebe7f3",
+        "border-dark": "#2a"
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"]
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        full: "9999px"
+      },
+      boxShadow: {
+        soft: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+        lg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+      }
+      }
+    }
+    };
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/nav.css">
+<link rel="stylesheet" href="assets/background-animation.css">
+<script src="assets/nav.js" defer></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-light dark:text-neutral-dark">
+<elevenlabs-convai agent-id="agent_5601k9av43nrf57v6xgzpjbdpssy"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<div class="animated-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div id="global-nav"></div>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-3 z-10 mx-2 sm:mx-6 md:mx-16 lg:mx-32 xl:mx-40 mt-4 rounded-lg border border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10 p-0">
+<div class="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+  <img src="assets/logo.png" alt="AlertRix Logo" class="h-14 w-14 object-contain">
+  <a href="index.html" class="glass-effect rounded-lg px-4 py-2 text-xl font-bold transition-all hover:scale-105 hover:bg-primary/10">
+    AlertRix
+  </a>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="about bot.html">Product</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="features.html">Features</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="order page.html">Order </a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="bot works.html">Support</a>
+<a class="nav-link active text-sm font-medium transition-colors hover:text-primary" href="reason.html">Reason</a>
+<a class="nav-link text-sm font-medium transition-colors hover:text-primary" href="about.html">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="order page.html" class="glass-effect rounded-lg bg-primary/80 px-5 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-primary">
+        Pre-Order
+      </a>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-4xl">
+<div class="text-center">
+<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Why Choose Us?</h2>
+<p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+            AlertRix stands out as the premier AI companion for medication reminders and elderly care. Our commitment to innovation, user-centric design, and unwavering support sets us apart from the competition.
+          </p>
+</div>
+<div class="mt-16">
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Key Advantages</h3>
+<div class="overflow-hidden rounded-xl shadow-lg glass-effect">
+<table class="min-w-full">
+<thead class="bg-white/10 dark:bg-black/10">
+<tr>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">Feature</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">AlertRix</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">Competitor A</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300" scope="col">Competitor B</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/10 dark:divide-white/5">
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">AI-Powered Reminders</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Intelligent, personalized reminders that adapt to individual needs.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Basic reminders, limited customization.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Standard reminders with fixed schedules.</td>
+</tr>
+<tr class="bg-white/5 dark:bg-black/5">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Comprehensive Care</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Activity tracking, emergency alerts, and family communication.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Primarily medication reminders.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Limited additional features.</td>
+</tr>
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">User-Friendly Interface</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Intuitive and easy-to-use for seniors and caregivers.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Complex interface, steep learning curve.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Cluttered and difficult to navigate.</td>
+</tr>
+<tr class="bg-white/5 dark:bg-black/5">
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Proactive Support</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">24/7 dedicated support team for assistance.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Limited support, slow response times.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Self-service support only.</td>
+</tr>
+<tr>
+<td class="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">Affordable Order</td>
+<td class="px-6 py-5 text-sm text-gray-700 dark:text-gray-300">Competitive plans tailored to different needs and budgets.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">Expensive plans with limited features.</td>
+<td class="px-6 py-5 text-sm text-gray-500 dark:text-gray-400">High costs with hidden fees.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-16">
+<div class="glass-effect p-8 rounded-xl shadow-lg">
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white">Our Commitment</h3>
+<p class="mt-4 text-lg text-gray-700 dark:text-gray-300">
+            Our AlertRix is designed with empathy and innovation, ensuring peace of mind for families and enhanced well-being for their loved ones. We continuously strive to improve our product and services, driven by our passion for making a positive impact on the lives of those we serve.
+          </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-white/20 bg-white/30 backdrop-blur-lg dark:border-white/10 dark:bg-black/10">
+<div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex items-center justify-center gap-6 mb-6">
+  <a href="https://www.instagram.com/alertrix.lk/" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-instagram text-2xl"></i>
+  </a>
+  <a href="https://wa.me/+94750254442" target="_blank" rel="noopener noreferrer" 
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+  <a href="https://linkedin.com/company/alertrix/" target="_blank" rel="noopener noreferrer"
+     class="text-subtle-light hover:text-primary dark:text-subtle-dark dark:hover:text-primary transition-all hover:scale-110">
+    <i class="fab fa-linkedin text-2xl"></i>
+  </a>
+</div>
+<div class="flex flex-col items-center gap-8">
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="about bot.html">Product</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="features.html">Features</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="order page.html">Order</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="bot works.html">Support</a>
+<a class="text-sm text-subtle-light transition-colors hover:text-primary dark:text-subtle-dark dark:hover:text-primary" href="sitemap.html">Support</a>
+</div>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">© 2025 AlertRix. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<style>
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+</style>
+
+</body></html>
