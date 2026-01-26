@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AlertRix - About Us</title>
+
+<!-- Meta Tags -->
+<meta property="og:title" content="AlertRix - About Our Company" />
+<meta property="og:description" content="Meet the team behind AlertRix - AI-powered elderly care innovation." />
+<meta property="og:image" content="https://alertrix.lk/assets/LOGO.jpeg" />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="assets/LOGO.png">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    /* Primary Navigation Bar */
+    header {
+        position: fixed;
+        top: 20px;
+        left: 40px;
+        right: 40px;
+        z-index: 1000;
+        background: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        transition: all 0.4s ease;
+    }
+
+    header.scrolled {
+        background: rgba(0, 0, 0, 0.95);
+        top: 10px;
+    }
+
+    .primary-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        max-width: 100%;
+    }
+
+    .menu-toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 400;
+        transition: opacity 0.3s;
+    }
+
+    .menu-toggle-btn:hover {
+        opacity: 0.7;
+    }
+
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .hamburger-icon span {
+        width: 20px;
+        height: 1px;
+        background: #fff;
+        transition: all 0.3s;
+    }
+
+    .menu-toggle-btn.active .hamburger-icon span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+    }
+
+    .menu-toggle-btn.active .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle-btn.active .hamburger-icon span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .logo-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: all 0.4s ease;
+    }
+
+    header.scrolled .logo-img {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .brand-name {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0;
+        max-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: all 0.4s ease;
+    }
+
+    header.scrolled .brand-name {
+        opacity: 1;
+        max-width: 200px;
+    }
+
+    .contact-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 30px;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-radius: 25px;
+    }
+
+    .contact-btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: scale(1.02);
+    }
+
+    /* Secondary Navigation */
+    .secondary-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 10px;
+        background: rgba(10, 16, 20, 0.45);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        border-radius: 20px;
+    }
+
+    .secondary-nav.active {
+        max-height: 120px;
+        background: rgba(10, 16, 20, 0.55);
+    }
+
+    .secondary-nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+    }
+
+    .current-selection {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    .dropdown-arrow {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #fff;
+    }
+
+    .action-links {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+    }
+
+    .action-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 400;
+        position: relative;
+        transition: opacity 0.3s;
+    }
+
+    .action-links a:hover, .action-links a.active::after {
+        opacity: 0.7;
+    }
+
+    .action-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: #fff;
+        transition: width 0.3s ease;
+    }
+
+    .action-links a:hover::after, .action-links a.active::after {
+        width: 100%;
+    }
+
+    .center-indicator {
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        background: transparent;
+    }
+
+    /* About Hero Section */
+    .about-hero {
+        padding: 180px 60px 80px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .about-text h1 {
+        font-size: 70px;
+        font-weight: 300;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.8;
+        opacity: 0.8;
+        font-weight: 300;
+    }
+
+    .about-media {
+        width: 100%;
+        height: 500px;
+        background: #1a1a1a;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-media img, .about-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .media-placeholder {
+        font-size: 120px;
+        opacity: 0.2;
+    }
+
+    /* Mission & Vision Section */
+    .mission-vision {
+        padding: 80px 60px;
+        background: #000;
+    }
+
+    .mv-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .mv-card {
+        background: #0a0a0a;
+        border: 1px solid #1a1a1a;
+        border-radius: 16px;
+        padding: 60px 40px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+
+    .mv-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .mv-card:hover {
+        background: #111;
+        border-color: #2a2a2a;
+        transform: translateY(-5px);
+    }
+
+    .mv-card:hover::before {
+        opacity: 1;
+    }
+
+    .mv-media {
+        width: 100%;
+        height: 300px;
+        background: #1a1a1a;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mv-media img, .mv-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .mv-card h2 {
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .mv-card p {
+        font-size: 14px;
+        line-height: 1.8;
+        opacity: 0.7;
+        font-weight: 300;
+    }
+
+    /* Team Section */
+    .team-section {
+        padding: 80px 60px;
+        background: #000;
+    }
+
+    .team-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .team-header h2 {
+        font-size: 48px;
+        font-weight: 300;
+        letter-spacing: 12px;
+        text-transform: uppercase;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .team-member {
+        text-align: center;
+    }
+
+    .team-avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        overflow: hidden;
+        border: 3px solid #1a1a1a;
+        transition: all 0.3s ease;
+    }
+
+    .team-member:hover .team-avatar {
+        border-color: #fff;
+        transform: scale(1.05);
+    }
+
+    .team-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .avatar-placeholder {
+        width: 100%;
+        height: 100%;
+        background: #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+        opacity: 0.3;
+    }
+
+    .team-member h3 {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    .team-member p {
+        font-size: 13px;
+        opacity: 0.6;
+        font-weight: 300;
+    }
+
+    /* Footer - Unified Design */
+    footer {
+        background: #000;
+        padding: 80px 20px 40px;
+        border-top: 1px solid #111;
+    }
+
+    .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        color: #666;
+        font-size: 24px;
+        transition: color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-links a:hover {
+        color: #fff;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .footer-links a {
+        color: #666;
+        text-decoration: none;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .footer-links a:hover {
+        color: #fff;
+    }
+
+    .copyright {
+        color: #444;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        padding: 0 20px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        header {
+            left: 20px;
+            right: 20px;
+        }
+
+        .primary-nav {
+            padding: 20px 30px;
+        }
+
+        .secondary-nav-content {
+            padding: 20px 30px;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .action-links {
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .secondary-nav.active {
+            max-height: 180px;
+        }
+
+        .about-hero {
+            padding: 140px 30px 60px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .about-text h1 {
+            font-size: 42px;
+            letter-spacing: 4px;
+        }
+
+        .about-media {
+            height: 300px;
+        }
+
+        .mv-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .brand-name {
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        /* Footer Mobile */
+        footer {
+            padding: 60px 15px 30px;
+        }
+
+        .social-links {
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            font-size: 22px;
+        }
+
+        .footer-links {
+            gap: 20px;
+            padding: 0 10px;
+        }
+
+        .footer-links a {
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        .copyright {
+            font-size: 9px;
+            letter-spacing: 2px;
+            padding: 0 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about-text h1 {
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-links {
+            gap: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header id="mainHeader">
+        <div class="primary-nav">
+            <button class="menu-toggle-btn" id="menuToggle">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                MENU
+            </button>
+
+            <div class="logo-center">
+                <img src="assets/LOGO.png" alt="AlertRix Logo" class="logo-img">
+                <a href="index.html" class="brand-name">AlertRix</a>
+            </div>
+
+            <a href="#contact" class="contact-btn">PRE-ORDER</a>
+        </div>
+
+        <div class="secondary-nav" id="secondaryNav">
+            <div class="secondary-nav-content">
+                <div class="current-selection">
+                    <div class="dropdown-arrow"></div>
+                    <span>ABOUT US</span>
+                </div>
+
+                <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="product.html">PRODUCT</a>
+                <a href="features.html">FEATURES</a>
+                <a href="about.html">ABOUT US</a>
+                
+            </div>
+            </div>
+            <div class="center-indicator"></div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="about-grid">
+            <div class="about-text">
+                <h1>ABOUT US</h1>
+                <p>AlertRix was launched in 2025 by a dynamic team, including both compassionate healthcare experts and skilled IoT & development specialists. We recognized the urgent need for elderly care to move beyond traditional methods and adopt a proactive, personalized approach.</p>
+            </div>
+            <div class="about-media">
+                <div><img src="assets/LOGO.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="mv-grid">
+            <div class="mv-card">
+                <div class="mv-media">
+                    <div class="media-placeholder">🎯</div>
+                </div>
+                <h2>MISSION</h2>
+                <p>AlertRix's mission is to leverage technology to improve the health and well-being of seniors. We believe that AI can play a vital role in enhancing medication adherence, promoting independence, and reducing the burden on caregivers. Our commitment is to create solutions that are both effective and user-friendly, making a positive impact on the lives of those we serve.</p>
+            </div>
+
+            <div class="mv-card">
+                <div class="mv-media">
+                    <div class="media-placeholder">👁️</div>
+                </div>
+                <h2>VISION</h2>
+                <p>Our vision is to empower seniors, chronic patients, and busy individuals to live independently and safely through an AI-powered smart medication management system with intelligent pill-dispensing, improving medication adherence and enhancing quality of life for users and their families.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-header">
+            <h2>OUR TEAM</h2>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNxx8wJCdicws1FpWLxA3DjuKYpHYUIRc2zSxxYpPlfDBBS_SRoXsdBy6meR1d8Z0mRR8g7n8RWII2qYjavD7MOFtL2SxlPa1bVLqBWnmQlJQH2oTI5ij8HmCEQmwSQidTjnrGUGFnL7Jkxv8Y9tXZleapxSWLOaiTGPlSgoX71mCoelzfbfTzMvKkIivbOrp-jTmb1kmljnjMb8xy6ctAQYwDLaA5zvX89s2rkxZwWRJwmHVMN9YY3I_RcQjaeI8PluQ_Yju8Uc" alt="Shamra M">
+                </div>
+                <h3>Shamra M</h3>
+                <p>Firmware Lead</p>
+            </div>
+
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="assets/s.png" alt="Sithuli S">
+                </div>
+                <h3>Sithuli S</h3>
+                <p>Design Lead</p>
+            </div>
+
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="assets/h.png" alt="Humaid R">
+                </div>
+                <h3>Humaid R</h3>
+                <p>Development Lead</p>
+            </div>
+
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="assets/t.png" alt="Thivina H">
+                </div>
+                <h3>Thivina H</h3>
+                <p>Mechanical Lead</p>
+            </div>
+
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="assets/l.png" alt="Lakshan T">
+                </div>
+                <h3>Lakshan T</h3>
+                <p>Hardware Lead</p>
+            </div>
+
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="assets/P1.png" alt="Bhadrash C">
+                </div>
+                <h3>Bhadrash C</h3>
+                <p>Frontend Lead</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.instagram.com/alertrix.lk" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/+94750254442" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://linkedin.com/company/alertrix/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">PRODUCT</a>
+                <a href="features.html">FEATURES</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="bot works.html">SUPPORT</a>
+            </div>
+
+            <p class="copyright">© 2025 AlertRix. Crafted for Excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const secondaryNav = document.getElementById('secondaryNav');
+        const mainHeader = document.getElementById('mainHeader');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            secondaryNav.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                secondaryNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+
+        secondaryNav.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
