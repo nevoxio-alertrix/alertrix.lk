@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="AlertRix - AI Companion for Elderly Care" />
 <meta name="twitter:description" content="Meet AlertRix – The AI companion that never forgets your medicine. AI-powered medication reminders and health monitoring." />
-<meta name="twitter:image" content="https://alertrix.lk/assets/LOGO.jpg" />
+<meta name="twitter:image" content="https://alertrix.lk/assets/LOGO.png" />
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -794,6 +794,505 @@
                 font-size: 9px;
             }
         }
+    
+
+        /* ===================================
+           NAVIGATION ALIGNMENT FIXES
+           =================================== */
+
+        /* Fix logo-center container to properly center brand name when scrolled */
+        .logo-center {
+            position: absolute !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 10px !important;
+            transition: all 0.4s ease !important;
+        }
+
+        /* When scrolled, ensure brand name is centered */
+        header.scrolled .logo-center {
+            gap: 0 !important;
+        }
+
+        .logo-img {
+            flex-shrink: 0 !important;
+            transition: all 0.4s ease !important;
+        }
+
+        header.scrolled .logo-img {
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+        }
+
+        .brand-name {
+            font-weight: 400 !important;
+            letter-spacing: 3px !important;
+            text-transform: uppercase !important;
+            color: #fff !important;
+            text-decoration: none !important;
+            opacity: 0 !important;
+            max-width: 0 !important;
+            overflow: hidden !important;
+            white-space: nowrap !important;
+            transition: all 0.4s ease !important;
+            flex-shrink: 0 !important;
+        }
+
+        header.scrolled .brand-name {
+            opacity: 1 !important;
+            max-width: 200px !important;
+        }
+
+        /* Ensure contact button styling is consistent */
+        .contact-btn {
+            display: flex !important;
+            align-items: center !important;
+            background: #fff !important;
+            color: #000 !important;
+            text-decoration: none !important;
+            text-transform: uppercase !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            z-index: 10 !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.9) !important;
+            transform: scale(1.02) !important;
+        }
+
+        /* Ensure menu button doesn't interfere with centering */
+        .menu-toggle-btn {
+            flex-shrink: 0 !important;
+        }
+
+        /* Fix for brand name text centering at all breakpoints */
+        @media (max-width: 374px) {
+            header.scrolled .brand-name {
+                font-size: 11px !important;
+                letter-spacing: 2px !important;
+            }
+        }
+
+        @media (min-width: 375px) and (max-width: 767px) {
+            header.scrolled .brand-name {
+                font-size: 12px !important;
+                letter-spacing: 2px !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            header.scrolled .brand-name {
+                font-size: 14px !important;
+                letter-spacing: 2.5px !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            header.scrolled .brand-name {
+                font-size: 18px !important;
+                letter-spacing: 3px !important;
+            }
+        }
+
+        /* ===================================
+           RESPONSIVE NAVIGATION FIXES
+           =================================== */
+
+        /* Primary Navigation Bar - RESPONSIVE BASE */
+        header {
+            position: fixed;
+            top: 10px !important;
+            left: 10px !important;
+            right: 10px !important;
+            z-index: 1000;
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px !important;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            top: 5px !important;
+        }
+
+        .primary-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px !important;
+            max-width: 100%;
+            position: relative;
+        }
+
+        /* Menu Button - RESPONSIVE */
+        .menu-toggle-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px !important;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 10px !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 400;
+            transition: opacity 0.3s;
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .hamburger-icon span {
+            width: 18px !important;
+            height: 1px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        /* Logo - RESPONSIVE */
+        .logo-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 8px !important;
+            z-index: 5;
+        }
+
+        .logo-img {
+            width: 70px !important;
+            height: 70px !important;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled .logo-img {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .brand-name {
+            font-size: 12px !important;
+            font-weight: 400;
+            letter-spacing: 2px !important;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled .brand-name {
+            opacity: 1;
+            max-width: 200px;
+        }
+
+        /* Contact Button - RESPONSIVE */
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px !important;
+            padding: 10px 18px !important;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-size: 9px !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 20px !important;
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        .contact-btn i {
+            font-size: 11px !important;
+        }
+
+        /* Secondary Navigation - RESPONSIVE */
+        .secondary-nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 10px;
+            background: rgba(10, 16, 20, 0.45);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, backdrop-filter 0.25s ease, background-color 0.25s ease;
+            border-radius: 15px !important;
+        }
+
+        .secondary-nav.active {
+            max-height: 200px !important;
+            background: rgba(10, 16, 20, 0.55);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+        }
+
+        .secondary-nav-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px !important;
+        }
+
+        .current-selection {
+            display: flex;
+            align-items: center;
+            gap: 8px !important;
+            font-size: 10px !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .action-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px !important;
+            list-style: none;
+        }
+
+        .action-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 10px !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+            position: relative;
+            transition: opacity 0.3s;
+        }
+
+        /* ===================================
+           RESPONSIVE BREAKPOINTS
+           =================================== */
+
+        /* Small Mobile (up to 374px) */
+        @media (max-width: 374px) {
+            .menu-toggle-btn {
+                font-size: 0 !important;
+                gap: 0 !important;
+            }
+            
+            .contact-btn {
+                padding: 8px 12px !important;
+                font-size: 8px !important;
+                gap: 4px !important;
+            }
+            
+            .contact-btn i {
+                font-size: 10px !important;
+            }
+            
+            .logo-img {
+                width: 55px !important;
+                height: 55px !important;
+            }
+            
+            .brand-name {
+                font-size: 11px !important;
+            }
+            
+            .action-links {
+                gap: 10px 15px !important;
+            }
+            
+            .action-links a {
+                font-size: 9px !important;
+            }
+        }
+
+        /* Mobile (375px to 767px) */
+        @media (min-width: 375px) and (max-width: 767px) {
+            .logo-img {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            
+            .brand-name {
+                font-size: 12px !important;
+            }
+        }
+
+        /* Tablet (768px to 1023px) */
+        @media (min-width: 768px) {
+            header {
+                top: 15px !important;
+                left: 20px !important;
+                right: 20px !important;
+                border-radius: 18px !important;
+            }
+
+            header.scrolled {
+                top: 8px !important;
+            }
+
+            .primary-nav {
+                padding: 18px 30px !important;
+            }
+
+            .menu-toggle-btn {
+                gap: 10px !important;
+                font-size: 11px !important;
+            }
+
+            .hamburger-icon span {
+                width: 20px !important;
+            }
+
+            .logo-img {
+                width: 90px !important;
+                height: 90px !important;
+            }
+
+            .brand-name {
+                font-size: 14px !important;
+                letter-spacing: 2.5px !important;
+            }
+
+            .contact-btn {
+                padding: 12px 24px !important;
+                font-size: 10px !important;
+                letter-spacing: 2px !important;
+                border-radius: 22px !important;
+                gap: 6px !important;
+            }
+
+            .contact-btn i {
+                font-size: 13px !important;
+            }
+
+            .secondary-nav {
+                border-radius: 18px !important;
+            }
+
+            .secondary-nav.active {
+                max-height: 140px !important;
+            }
+
+            .secondary-nav-content {
+                flex-direction: row !important;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 30px !important;
+                gap: 20px;
+            }
+
+            .current-selection {
+                font-size: 11px !important;
+            }
+
+            .action-links {
+                gap: 15px 30px !important;
+            }
+
+            .action-links a {
+                font-size: 11px !important;
+            }
+        }
+
+        /* Desktop (1024px and up) */
+        @media (min-width: 1024px) {
+            header {
+                top: 20px !important;
+                left: 40px !important;
+                right: 40px !important;
+                border-radius: 20px !important;
+            }
+
+            header.scrolled {
+                top: 10px !important;
+            }
+
+            .primary-nav {
+                padding: 20px 40px !important;
+            }
+
+            .menu-toggle-btn {
+                gap: 12px !important;
+                font-size: 11px !important;
+            }
+
+            .logo-img {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .brand-name {
+                font-size: 18px !important;
+                letter-spacing: 3px !important;
+            }
+
+            .contact-btn {
+                padding: 12px 30px !important;
+                font-size: 11px !important;
+                border-radius: 25px !important;
+                gap: 8px !important;
+            }
+
+            .contact-btn i {
+                font-size: 14px !important;
+            }
+
+            .secondary-nav {
+                border-radius: 20px !important;
+            }
+
+            .secondary-nav.active {
+                max-height: 120px !important;
+            }
+
+            .secondary-nav-content {
+                padding: 20px 40px !important;
+            }
+
+            .current-selection {
+                font-size: 12px !important;
+            }
+
+            .action-links {
+                gap: 20px 40px !important;
+            }
+        }
+
+        /* Large Desktop (1440px and up) */
+        @media (min-width: 1440px) {
+            header {
+                left: 60px !important;
+                right: 60px !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -851,7 +1350,7 @@
             <div class="product-display"><img src="assets/main.jpg" alt="Product Image"></div>
             <div class="slide-content">
                 <h1 class="slide-title">ALERTRIX</h1>
-                <p class="hero-subtitle">SMART ALERTS, SAFE DOSES</p>
+                <p class="hero-subtitle">SMART ALERTS, SAVE DOSES</p>
                 <a href="product.html" class="discover-button">DISCOVER MORE</a>
             </div>
         </div>
