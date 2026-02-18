@@ -22,6 +22,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/global.css">
 <link rel="icon" type="image/x-icon" href="assets/LOGO.jpeg">
 
 <script type="application/ld+json">
@@ -49,6 +50,16 @@
             background: #000;
             color: #fff;
             overflow-x: hidden;
+        }
+
+        /* global responsive breakpoints */
+        :root {
+            --bp-xs: 374px;
+            --bp-sm: 480px;
+            --bp-md: 768px;
+            --bp-lg: 1024px;
+            --bp-xl: 1440px;
+            --bp-xxl: 1920px;
         }
 
         /* Scroll animation utilities */
@@ -560,8 +571,9 @@
         }
 
         .video-section.small {
-            height: 70vh;
-            margin-top: 60px;
+            /* make second video full‑screen on larger displays so it remains visible without scrolling */
+            height: 100vh;
+            margin-top: 0;
         }
 
         .video-container {
@@ -590,7 +602,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover; /* ensure poster and video fill container equally */
+            object-position: center;
         }
 
         .video-content {
@@ -724,6 +737,11 @@
                 height: 100vh;
             }
 
+            /* keep small variant full height on mobile as well */
+            .video-section.small {
+                height: 100vh;
+            }
+
             .video-content {
                 padding: 60px 30px;
             }
@@ -830,6 +848,14 @@
 
             .footer-links a {
                 font-size: 9px;
+            }
+        }
+
+        /* extra-wide screens adjustments */
+        @media (min-width: 1920px) {
+            .explore-grid, .explore-card {
+                max-width: 1800px;
+                margin: 0 auto;
             }
         }
     
