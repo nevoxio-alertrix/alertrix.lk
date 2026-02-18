@@ -6,6 +6,7 @@
     <title>AlertRix | The Future of Medication Management</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/global.css">
     <link rel="icon" type="image/x-icon" href="assets/LOGO.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"/>
     
@@ -63,6 +64,13 @@
             --ap-black: #000000;
             --ap-gray: #111111;
             --ap-border: rgba(255, 255, 255, 0.1);
+            /* global responsive breakpoints */
+            --bp-xs: 374px;
+            --bp-sm: 480px;
+            --bp-md: 768px;
+            --bp-lg: 1024px;
+            --bp-xl: 1440px;
+            --bp-xxl: 1920px;
         }
 
         body {
@@ -161,12 +169,17 @@
             cursor: pointer;
         }
 
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
         .hamburger-icon span {
-            display: block;
             width: 20px;
             height: 1px;
             background: #fff;
-            margin: 4px 0;
+            transition: all 0.3s;
         }
 
         .logo-center {
@@ -244,7 +257,7 @@
         .action-links { display: flex; gap: 40px; list-style: none; }
         .action-links a {
             color: #fff;
-            text-decoration: none;
+            text-decoration: none; /* remove underline */
             font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -253,6 +266,8 @@
         .action-links a.active::after {
             content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background: #fff;
         }
+        /* hide center indicator bar which appears under ABOUT US */
+        .center-indicator { display: none; }
 
         /* --- LUXURY CONTENT STYLES --- */
         h1, h2, h3 { text-transform: uppercase; letter-spacing: 0.15em; font-weight: 800; }
@@ -438,6 +453,15 @@
 
             .footer-links a {
                 font-size: 9px;
+            }
+        }
+
+        /* extra-wide screens adjustments */
+        @media (min-width: 1920px) {
+            /* widen layout containers */
+            .container, .price-card {
+                max-width: 1800px;
+                margin: 0 auto;
             }
         }
     
@@ -1052,7 +1076,7 @@
             </div>
             <div class="w-full max-w-7xl mx-auto px-6">
                 <div class="aspect-video border border-white/10 shadow-2xl bg-black">
-                    <video class="w-full h-full object-cover" controls poster="assets/poster.png" autoplay loop muted>
+                    <video class="w-full h-full object-cover" poster="assets/poster.png" autoplay loop muted>
                         <source src="assets/vid.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -1153,7 +1177,10 @@
         const secondaryNav = document.getElementById('secondaryNav');
         const mainHeader = document.getElementById('mainHeader');
 
-        menuToggle.addEventListener('click', () => { secondaryNav.classList.toggle('active'); });
+        menuToggle.addEventListener('click', () => { 
+            menuToggle.classList.toggle('active');
+            secondaryNav.classList.toggle('active');
+        });
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 100) mainHeader.classList.add('scrolled');
             else mainHeader.classList.remove('scrolled');
