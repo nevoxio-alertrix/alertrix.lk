@@ -1,0 +1,192 @@
+/* Global styles shared across all pages */
+
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* responsive breakpoints (use with var(--bp-...)) */
+:root {
+    --bp-xs: 374px;
+    --bp-sm: 480px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1440px;
+    --bp-xxl: 1920px;
+}
+
+/* Navigation bar (shared) */
+header {
+    position: fixed;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    z-index: 1000;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+    top: 10px;
+}
+
+.primary-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    max-width: 100%;
+}
+
+.menu-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    transition: opacity 0.3s;
+}
+
+.menu-toggle-btn:hover { opacity: 0.7; }
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-icon span {
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    transition: all 0.3s;
+}
+
+/* hamburger animation when menu button is active */
+.menu-toggle-btn.active .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+.menu-toggle-btn.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle-btn.active .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.logo-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+}
+
+header.scrolled .brand-name {
+    opacity: 1;
+    max-width: 200px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 30px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.contact-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.02);
+}
+
+/* Secondary nav & other shared util classes could go here */
+
+.secondary-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    /* base translucent overlay to simulate frosted glass */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(40px) saturate(200%) contrast(80%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) contrast(80%);
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, backdrop-filter 0.25s ease, background-color 0.25s ease;
+    border-radius: 20px;
+}
+
+/* overlay element behind dropdown to ensure page content is heavily blurred */
+.secondary-nav::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(60px) saturate(250%);
+    -webkit-backdrop-filter: blur(60px) saturate(250%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.secondary-nav.active {
+    max-height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(48px) saturate(220%) contrast(75%);
+    -webkit-backdrop-filter: blur(48px) saturate(220%) contrast(75%);
+}
+
