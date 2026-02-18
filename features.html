@@ -12,6 +12,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/global.css">
 <link rel="icon" type="image/x-icon" href="assets/LOGO.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
@@ -29,123 +30,19 @@
         overflow-x: hidden;
     }
 
-    /* Primary Navigation Bar */
-    header {
-        position: fixed;
-        top: 20px;
-        left: 40px;
-        right: 40px;
-        z-index: 1000;
-        background: transparent;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: all 0.4s ease;
+    /* global responsive breakpoints */
+    :root {
+        --bp-xs: 374px;    /* extra-small phones */
+        --bp-sm: 480px;    /* small phones */
+        --bp-md: 768px;    /* tablets */
+        --bp-lg: 1024px;   /* laptops/desktops */
+        --bp-xl: 1440px;   /* large desktops */
+        --bp-xxl: 1920px;  /* ultra-wide */
     }
 
-    header.scrolled {
-        background: rgba(0, 0, 0, 0.95);
-        top: 10px;
-    }
-
-    .primary-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-        max-width: 100%;
-    }
-
-    .menu-toggle-btn {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 11px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        cursor: pointer;
-        font-weight: 400;
-        transition: opacity 0.3s;
-    }
-
-    .menu-toggle-btn:hover {
-        opacity: 0.7;
-    }
-
-    .hamburger-icon {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    .hamburger-icon span {
-        width: 20px;
-        height: 1px;
-        background: #fff;
-        transition: all 0.3s;
-    }
-
-    .menu-toggle-btn.active .hamburger-icon span:nth-child(1) {
-        transform: rotate(45deg) translate(4px, 4px);
-    }
-
-    .menu-toggle-btn.active .hamburger-icon span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle-btn.active .hamburger-icon span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .logo-center {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .logo-img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        transition: all 0.4s ease;
-    }
-
-    header.scrolled .logo-img {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .brand-name {
-        font-size: 18px;
-        font-weight: 400;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: #fff;
-        text-decoration: none;
-        opacity: 0;
-        max-width: 0;
-        overflow: hidden;
-        white-space: nowrap;
-        transition: all 0.4s ease;
-    }
-
-    header.scrolled .brand-name {
-        opacity: 1;
-        max-width: 200px;
-    }
-
+    /* navigation styles have been moved to assets/global.css to avoid duplication across pages */
+    /* any overrides specific to this page can be added below */
     .contact-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
         padding: 12px 30px;
         background: #fff;
         color: #000;
@@ -338,7 +235,7 @@
 
     .how-intro-image {
         width: 100%;
-        height: 400px;
+        aspect-ratio: 16/9;
         border-radius: 12px;
         overflow: hidden;
         background: #1a1a1a;
@@ -475,32 +372,20 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        padding: 20px;
+        padding: 0;
         transition: transform 0.6s ease;
     }
 
     .feature-card:hover .feature-image img {
         transform: scale(1.05);
     }
-   
-   .feature-image {
-            height: 220px;
-   }
 
-   
-   .feature-image img {
-            padding: 15px;
-            object-fit: contain;
-   }
+    /* remove fixed heights and repeated padding declarations */
+    .feature-image {
+        height: auto;
+        padding: 0;
+    }
 
-   .feature-image {
-            height: 200px;
-   }
-
-   .feature-image img {
-            padding: 12px;
-   }
-   
     .feature-content {
         padding: 40px 30px;
     }
@@ -629,6 +514,12 @@
             max-height: 180px;
         }
 
+        /* remove wide side spacing on mobile */
+        .features-section {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
         .features-hero {
             padding: 120px 30px 60px;
         }
@@ -656,7 +547,8 @@
         }
 
         .how-intro-image {
-            height: 300px;
+            aspect-ratio: 16/9;
+            height: auto;
         }
 
         .section-header {
@@ -681,23 +573,20 @@
             position: static;
         }
 
+        /* collapse multiple adjustments into one clean rule */
         .feature-card {
-            flex: 0 0 300px;
-        }
-
-        .feature-image {
-            height: 400px;
-        }
-       .feature-card {
-            flex: 0 0 280px;
+            flex: 0 0 240px !important;
             border-radius: 12px;
         }
 
-       .feature-card {
-            flex: 0 0 260px;
+        /* let image occupy its natural height and eliminate padding */
+        .feature-image {
+            height: auto !important;
+            padding: 0 !important;
         }
-       .feature-card {
-            flex: 0 0 240px !important;
+
+        .feature-image img {
+            padding: 0 !important;
         }
 
         .brand-name {
@@ -774,6 +663,14 @@
 
         .footer-links a {
             font-size: 9px;
+        }
+    }
+
+    /* large desktop/ultra-wide adjustments */
+    @media (min-width: 1920px) {
+        .features-container {
+            max-width: 1800px;
+            margin: 0 auto;
         }
     }
 
@@ -1339,7 +1236,7 @@
             <section class="py-20 bg-zinc-950">
                 <div class="w-full max-w-7xl mx-auto px-6">
                     <div class="aspect-video border border-white/10 shadow-2xl bg-black">
-                        <video class="w-full h-full object-cover" controls poster="assets/poster.png" autoplay loop muted>
+                        <video class="w-full h-full object-cover" poster="assets/poster.png" autoplay loop muted>
                             <source src="assets/HOW.mp4" type="video/mp4">
                         </video>
                     </div>
