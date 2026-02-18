@@ -12,6 +12,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/global.css">
 <link rel="icon" type="image/x-icon" href="assets/LOGO.png">
 
 <style>
@@ -26,6 +27,16 @@
         background: #000;
         color: #fff;
         overflow-x: hidden;
+    }
+
+    /* global responsive breakpoints */
+    :root {
+        --bp-xs: 374px;
+        --bp-sm: 480px;
+        --bp-md: 768px;
+        --bp-lg: 1024px;
+        --bp-xl: 1440px;
+        --bp-xxl: 1920px;
     }
 
     /* Primary Navigation Bar */
@@ -692,6 +703,14 @@
 
         .social-links {
             gap: 20px;
+        }
+    }
+
+    /* extra-wide screen adjustments */
+    @media (min-width: 1920px) {
+        .about-hero, .mission-vision, .team-section {
+            max-width: 1800px;
+            margin: 0 auto;
         }
     }
 
