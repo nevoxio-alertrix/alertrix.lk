@@ -1,0 +1,341 @@
+.main {
+  background: #000;
+  padding-top: 120px;
+}
+
+.sectionTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 80vh;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+}
+
+.heroLeft {
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(44px, 6vw, 80px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-bottom: 24px;
+}
+
+.heroDesc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 12px 24px;
+  border-radius: 100px;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.ctaBtn:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.heroRight {
+  position: relative;
+  background: #0a0a0a;
+  min-height: 400px;
+}
+
+.heroImgWrap {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.heroImgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s;
+}
+
+.heroImgWrap:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+/* ---- PROBLEM ---- */
+.problem {
+  padding: 80px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.problemInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .problemInner { grid-template-columns: 1fr 2fr; align-items: center; }
+}
+
+.problemText {
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ---- VIDEO ---- */
+.videoSection {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.videoHeader {
+  margin-bottom: 32px;
+}
+
+.videoWrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.videoWrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- PRICING ---- */
+.pricing {
+  padding: 80px 40px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  margin-top: 48px;
+}
+
+@media (min-width: 640px) {
+  .cards { grid-template-columns: 1fr 1fr; }
+}
+
+.card {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: border-color 0.3s;
+  background: #050505;
+}
+
+.card:hover { border-color: rgba(255,255,255,0.2); }
+
+.cardPremium {
+  background: #0c0c0c;
+  border-color: rgba(255,255,255,0.15);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cardTag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: -8px;
+}
+
+.cardBadge {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.cardFeatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.cardFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+}
+
+.cardFeatures li i {
+  font-size: 9px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.cardCta {
+  display: block;
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 14px;
+  transition: all 0.3s;
+}
+
+.cardCta:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.cardCtaWhite {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.cardCtaWhite:hover {
+  background: rgba(255,255,255,0.88);
+}
+
+/* ---- WAITLIST ---- */
+.waitlist {
+  padding: 80px 40px 100px;
+  text-align: center;
+  background: #030303;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.waitlistSub {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+.waitlistForm {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.waitlistInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 14px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.waitlistInput::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+.waitlistBtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: #fff;
+  color: #000;
+  padding: 14px 24px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.waitlistBtn:hover {
+  background: rgba(255,255,255,0.88);
+}

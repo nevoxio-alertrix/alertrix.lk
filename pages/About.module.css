@@ -1,0 +1,256 @@
+.main {
+  background: #000;
+  padding-top: 120px;
+}
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 70vh;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  align-items: center;
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+}
+
+.heroLeft {
+  padding: 60px 40px;
+  position: relative;
+  z-index: 1;
+  max-width: 580px;
+}
+
+.heroTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(56px, 8vw, 110px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 0.92;
+  margin-bottom: 28px;
+}
+
+.heroDesc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  max-width: 460px;
+}
+
+.heroRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #050505;
+  min-height: 400px;
+  border-left: 1px solid rgba(255,255,255,0.04);
+}
+
+.logoWrap {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  filter: grayscale(20%);
+  transition: filter 0.5s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logoWrap:hover {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+.logoWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- MISSION/VISION ---- */
+.mvSection {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.mvCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding: 72px 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .mvCard {
+    grid-template-columns: 80px 1fr;
+  }
+}
+
+.mvDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 0 40px;
+}
+
+.mvIcon {
+  font-size: 40px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+.mvContent {}
+
+.mvTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.mvText {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  max-width: 600px;
+}
+
+/* ---- TEAM ---- */
+.teamSection {
+  padding: 80px 40px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teamHeader {
+  margin-bottom: 56px;
+}
+
+.teamTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+}
+
+@media (min-width: 480px) {
+  .teamGrid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 768px) {
+  .teamGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.member {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s, border-color 0.3s;
+  cursor: default;
+  overflow: hidden;
+}
+
+.member:hover {
+  background: #080808;
+  border-color: rgba(255,255,255,0.14);
+}
+
+.memberAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+  background: #1a1a1a;
+}
+
+.memberAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%);
+  transition: filter 0.3s;
+}
+
+.member:hover .memberAvatar img { filter: grayscale(0%); }
+
+.memberInitials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+}
+
+.memberInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.memberName {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.memberRole {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+}
+
+.memberNum {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.12);
+  position: absolute;
+  top: 14px;
+  right: 16px;
+}
