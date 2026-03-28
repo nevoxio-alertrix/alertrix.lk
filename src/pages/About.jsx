@@ -94,7 +94,7 @@ export default function About() {
       <section className={styles.team}>
         <div className={styles.teamHeader} data-reveal>
           <span className="eyebrow">The People</span>
-          <h2 className={styles.teamTitle}>Team</h2>
+          <h2 className={styles.valuesTitle}>Team</h2>
         </div>
 
         <div className={styles.teamGrid}>
@@ -131,6 +131,9 @@ export default function About() {
             Have Questions? <span className={styles.contactTitleDim}>Let's Talk.</span>
           </h2>
           <div className={styles.contactLinks}>
+            <a href="mailto:nevoxioalertrix@gmail.com" className={styles.contactMailBtn}>
+              Email →
+            </a>
             <a href="https://www.instagram.com/alertrix.lk" target="_blank" rel="noopener noreferrer" className="btn-ghost">
               Instagram →
             </a>
