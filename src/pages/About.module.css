@@ -162,8 +162,8 @@
   line-height: 0.95;
   letter-spacing: -0.02em;
   margin-top: 12px;
-  color: rgba(255, 255, 255, 0.2);
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.45);
+  color: #fff;
+  -webkit-text-stroke: 0 transparent;
   text-transform: uppercase;
 }
 

@@ -43,11 +43,11 @@ export default function Navbar() {
       <div className={styles.bar}>
         {/* Left — logo mark */}
         <Link to="/" className={styles.logoWrap}>
-          <img src="/LOGO.png" alt="AlertRix" className={styles.logoImg} />
+          <img src="/LOGO.png" alt="AlertRix" style={{ width: '80px', height: '80px' }} className={styles.logoImg} />
         </Link>
 
         {/* Center — wordmark */}
-        <Link to="/" className={styles.wordmark}>AlertRix</Link>
+        <Link to="/" className={styles.wordmark} style={{ fontSize: '28px' }}>AlertRix</Link>
 
         {/* Right — links + CTA */}
         <div className={styles.right}>

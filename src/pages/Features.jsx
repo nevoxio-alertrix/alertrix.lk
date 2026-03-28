@@ -130,7 +130,7 @@ export default function Features() {
       {/* ── CTA ──────────────────────────────────────── */}
       <section className={styles.cta}>
         <div className={styles.ctaInner} data-reveal>
-          <span className="eyebrow eyebrow--accent">Ready to Begin</span>
+          <span className="eyebrow eyebrow--accent"><strong>Ready to Begin</strong></span>
           <h2 className={styles.ctaTitle}>
             Experience AlertRix <span className={styles.ctaTitleDim}>First-Hand</span>
           </h2>

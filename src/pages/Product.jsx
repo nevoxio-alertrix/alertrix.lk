@@ -24,7 +24,7 @@ export default function Product() {
       {/* ── HERO ─────────────────────────────────────── */}
       <section className={styles.hero}>
         <div className={styles.heroLeft}>
-          <span className="eyebrow eyebrow--accent" data-reveal>AlertRix — 2025</span>
+          <span className="eyebrow eyebrow--accent" data-reveal><strong>AlertRix — 2025</strong></span>
           <h1 className={styles.heroTitle} data-reveal data-delay="1">
             PRECISION<br /><span className={styles.heroTitleDim}>REMINDERS.</span>
           </h1>
@@ -42,7 +42,6 @@ export default function Product() {
           </p>
         </div>
         <div className={styles.heroRight}>
-          <img src="/product.png" alt="AlertRix Device" className={styles.heroImg} />
           <div className={styles.heroImgCaption}>AlertRix — Mk I</div>
         </div>
       </section>
@@ -108,7 +107,7 @@ export default function Product() {
       {/* ── PRICING ───────────────────────────────────── */}
       <section className={styles.pricing} id="preorder">
         <div className={styles.pricingHeader} data-reveal>
-          <span className="eyebrow">Availability</span>
+          <span className="eyebrow"><strong>Availability</strong></span>
           <h2 className={styles.pricingTitle}>
             Choose Your<br /><span className={styles.pricingTitleDim}>AlertRix</span>
           </h2>
@@ -139,7 +138,7 @@ export default function Product() {
             <div className={styles.cardBadge}>Recommended</div>
             <div className={styles.cardTop}>
               <h3 className={styles.cardName}>Premium</h3>
-              <span className="eyebrow" style={{ marginTop: '8px', color: 'rgba(0,0,0,0.4)' }}>One-time payment</span>
+              <span className="eyebrow" style={{ marginTop: '8px', color: 'rgba(0,0,0,0.4)' }}>Device and Subscription</span>
             </div>
             <ul className={styles.cardList}>
               {[...included, ...premiumExtras].map(f => (
@@ -149,7 +148,7 @@ export default function Product() {
                 </li>
               ))}
             </ul>
-            <a href="mailto:alertrix.lk@gmail.com" className={`${styles.cardCta} ${styles.cardCtaDark}`}>
+            <a href="mailto:nevoxioalertrix@gmail.com" className={`${styles.cardCta} ${styles.cardCtaDark}`}>
               Enquire Now →
             </a>
           </div>
@@ -159,16 +158,18 @@ export default function Product() {
       {/* ── WAITLIST ──────────────────────────────────── */}
       <section className={styles.waitlist} data-reveal>
         <div className={styles.waitlistInner}>
-          <span className="eyebrow eyebrow--accent">Waitlist</span>
+          <span className={styles.waitlistEyebrow}><strong>Waitlist</strong></span>
           <h2 className={styles.waitlistTitle}>
-            Be First<br /><span className={styles.waitlistTitleDim}>to Know.</span>
+            Be First
+            <br />
+            <span className={styles.waitlistTitleDim}>to Know.</span>
           </h2>
-          <p className="body-text" style={{ maxWidth: '360px', marginTop: '18px' }}>
-            Secure your place for the next production batch.
+          <p className={styles.waitlistBody}>
+            Secure your place for the next production batch and get launch updates first.
           </p>
           <form className={styles.waitlistForm} onSubmit={e => e.preventDefault()}>
             <input type="email" placeholder="your@email.com" className={styles.waitlistInput} />
-            <button type="submit" className={styles.waitlistBtn}>Join</button>
+            <button type="submit" className={styles.waitlistBtn}>Join Waitlist</button>
           </form>
         </div>
       </section>

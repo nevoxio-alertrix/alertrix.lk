@@ -183,7 +183,7 @@ export default function Home() {
       {/* ── CTA BAND ──────────────────────────────── */}
       <section className={styles.ctaBand}>
         <div className={styles.ctaBandInner} data-reveal>
-          <span className="eyebrow eyebrow--accent">Reserve Yours Today</span>
+          <span className="eyebrow eyebrow--accent"><strong>Reserve Yours Today</strong></span>
           <h2 className={styles.ctaBandTitle}>
             <span className={styles.ctaBandTitleDim}>AlertRix</span> — Now Available for Pre-Order
           </h2>

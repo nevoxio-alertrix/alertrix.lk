@@ -126,7 +126,7 @@ export default function About() {
       {/* ── CONTACT BAND ─────────────────────────────── */}
       <section className={styles.contact} data-reveal>
         <div className={styles.contactInner}>
-          <span className="eyebrow eyebrow--accent">Get in Touch</span>
+          <span className="eyebrow eyebrow--accent"><strong>Get in Touch</strong></span>
           <h2 className={styles.contactTitle}>
             Have Questions? <span className={styles.contactTitleDim}>Let's Talk.</span>
           </h2>
