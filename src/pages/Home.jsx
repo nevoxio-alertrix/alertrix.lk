@@ -185,7 +185,7 @@ export default function Home() {
         <div className={styles.ctaBandInner} data-reveal>
           <span className="eyebrow eyebrow--accent"><strong>Reserve Yours Today</strong></span>
           <h2 className={styles.ctaBandTitle}>
-            <span className={styles.ctaBandTitleDim}>AlertRix</span> — Now Available for Pre-Order
+            <span className={styles.ctaBandTitleDim}>AlertRix</span> 
           </h2>
           <Link to="/product#preorder" className={`btn-primary ${styles.ctaBandBtn}`}>
             Pre-Order Now →
