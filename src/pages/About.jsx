@@ -1,3 +1,8 @@
+import { useRef, useEffect } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { animate, stagger } from 'animejs'
+import { useTextReveal, useStaggerOnScroll } from '../hooks/useAnime.js'
 import Footer from '../components/Footer.jsx'
 import styles from './About.module.css'
 
@@ -18,25 +23,141 @@ const values = [
 ]
 
 export default function About() {
+  const containerRef = useRef(null)
+  const missionHeadingRef = useTextReveal({ delay: 100, duration: 1000, staggerDelay: 35, easing: 'easeOutExpo' })
+  const valuesGridRef = useStaggerOnScroll('[data-value-card]', {
+    opacity: [0, 1],
+    translateY: [40, 0],
+    scale: [0.96, 1],
+    delay: stagger(100, { start: 150 }),
+    duration: 1000,
+    ease: 'outCubic'
+  })
+  const teamGridRef = useStaggerOnScroll('[data-member]', {
+    opacity: [0, 1],
+    translateY: [40, 0],
+    delay: stagger(80, { start: 100 }),
+    duration: 900,
+    ease: 'outExpo'
+  })
+
+  // Anime.js hover effect on team member avatars
+  useEffect(() => {
+    const members = document.querySelectorAll(`.${styles.member}`)
+    members.forEach(member => {
+      const ava = member.querySelector(`.${styles.memberAva}`)
+      if (!ava) return
+
+      member.addEventListener('mouseenter', () => {
+        animate(ava, {
+          scale: 1.05,
+          rotate: '2deg',
+          duration: 500,
+          ease: 'outExpo'
+        })
+      })
+
+      member.addEventListener('mouseleave', () => {
+        animate(ava, {
+          scale: 1,
+          rotate: '0deg',
+          duration: 700,
+          ease: 'outElastic(1, .6)'
+        })
+      })
+    })
+  }, [])
+
+  // Logo pulse animation
+  useEffect(() => {
+    const logo = document.querySelector(`.${styles.logoCircle}`)
+    if (!logo) return
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        animate(logo, {
+          scale: [0.8, 1],
+          opacity: [0, 1],
+          rotate: ['15deg', '0deg'],
+          duration: 1600,
+          ease: 'outElastic(1, .5)'
+        })
+        observer.disconnect()
+      }
+    }, { threshold: 0.3 })
+
+    observer.observe(logo)
+    return () => observer.disconnect()
+  }, [])
+
+  useGSAP(() => {
+    // Hero entry animation
+    const tl = gsap.timeline()
+    tl.from(`.${styles.heroTitle} span`, {
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      stagger: 0.1,
+      ease: 'power4.out',
+      delay: 0.2
+    })
+    tl.from(`.${styles.heroLeft} > *:not(.${styles.heroTitle}), .${styles.heroRight}`, {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      stagger: 0.1,
+      ease: 'power3.out'
+    }, '-=0.8')
+
+    // Fade up sections
+    gsap.utils.toArray('.gsap-fade-up').forEach(el => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+        }
+      })
+    })
+
+    // Mission/Vision stagger
+    gsap.from(`.${styles.mvCard}`, {
+      opacity: 0,
+      y: 40,
+      stagger: 0.2,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: `.${styles.mv}`,
+        start: 'top 85%',
+      }
+    })
+
+  }, { scope: containerRef })
+
   return (
-    <main className={styles.page}>
+    <main className={styles.page} ref={containerRef}>
 
       {/* ── HERO ─────────────────────────────────────── */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroLeft} data-reveal>
+          <div className={styles.heroLeft}>
             <span className="eyebrow eyebrow--accent">AlertRix — Since 2025</span>
-            <h1 className={styles.heroTitle} data-reveal data-delay="1">
-              ABOUT<br /><span className={styles.heroTitleDim}>US</span>
+            <h1 className={styles.heroTitle} style={{ overflow: 'hidden' }}>
+              <span style={{ display: 'inline-block' }}>ABOUT</span><br />
+              <span className={styles.heroTitleDim} style={{ display: 'inline-block' }}>US</span>
             </h1>
-            <p className="body-text" style={{ marginTop: '24px', maxWidth: '420px' }} data-reveal data-delay="2">
+            <p className="body-text" style={{ marginTop: '24px', maxWidth: '420px' }}>
               AlertRix was founded in 2025 by a passionate multidisciplinary team who
               believed that advanced care technology should be available to every family —
               not just those in clinical settings.
             </p>
           </div>
-          <div className={styles.heroRight} data-reveal="right" data-delay="2">
-            <div className={styles.logoCircle}>
+          <div className={styles.heroRight}>
+            <div className={styles.logoCircle} style={{ opacity: 0 }}>
               <img src="/LOGO.png" alt="AlertRix" />
             </div>
           </div>
@@ -45,11 +166,11 @@ export default function About() {
 
       {/* ── MISSION & VISION ──────────────────────────── */}
       <section className={styles.mv}>
-        <div className={styles.mvCard} data-reveal>
+        <div className={styles.mvCard}>
           <div className={styles.mvIcon}>🎯</div>
           <div className={styles.mvBody}>
             <span className="eyebrow">Our Purpose</span>
-            <h2 className={styles.mvTitle}>Mission</h2>
+            <h2 ref={missionHeadingRef} className={styles.mvTitle}>Mission</h2>
             <p className="body-text" style={{ marginTop: '18px', maxWidth: '580px' }}>
               To leverage AI and precision engineering to improve the health and independence
               of seniors worldwide. We believe technology should be a quiet companion —
@@ -58,9 +179,9 @@ export default function About() {
           </div>
         </div>
 
-        <div className={styles.mvDivider} />
+        <div className={`${styles.mvDivider} gsap-fade-up`} />
 
-        <div className={styles.mvCard} data-reveal data-delay="1">
+        <div className={styles.mvCard}>
           <div className={styles.mvIcon}>👁️</div>
           <div className={styles.mvBody}>
             <span className="eyebrow">Where We're Going</span>
@@ -76,13 +197,13 @@ export default function About() {
 
       {/* ── VALUES ───────────────────────────────────── */}
       <section className={styles.values}>
-        <div className={styles.valuesHeader} data-reveal>
+        <div className={`${styles.valuesHeader} gsap-fade-up`}>
           <span className="eyebrow">What We Stand For</span>
           <h2 className={styles.valuesTitle}>Values</h2>
         </div>
-        <div className={styles.valuesGrid}>
+        <div className={styles.valuesGrid} ref={valuesGridRef}>
           {values.map((v, i) => (
-            <div key={v.title} className={styles.valueCard} data-reveal data-delay={(i + 1).toString()}>
+            <div key={v.title} className={styles.valueCard} data-value-card style={{ opacity: 0 }}>
               <h3 className={styles.valueTitle}>{v.title}</h3>
               <p className={styles.valueDesc}>{v.desc}</p>
             </div>
@@ -92,14 +213,14 @@ export default function About() {
 
       {/* ── TEAM ─────────────────────────────────────── */}
       <section className={styles.team}>
-        <div className={styles.teamHeader} data-reveal>
+        <div className={`${styles.teamHeader} gsap-fade-up`}>
           <span className="eyebrow">The People</span>
           <h2 className={styles.valuesTitle}>Team</h2>
         </div>
 
-        <div className={styles.teamGrid}>
+        <div className={styles.teamGrid} ref={teamGridRef}>
           {team.map((member, i) => (
-            <div key={i} className={styles.member} data-reveal data-delay={((i % 3) + 1).toString()}>
+            <div key={i} className={styles.member} data-member style={{ opacity: 0 }}>
               <div className={styles.memberAva}>
                 <img
                   src={member.img}
@@ -124,7 +245,7 @@ export default function About() {
       </section>
 
       {/* ── CONTACT BAND ─────────────────────────────── */}
-      <section className={styles.contact} data-reveal>
+      <section className={`${styles.contact} gsap-fade-up`}>
         <div className={styles.contactInner}>
           <span className="eyebrow eyebrow--accent"><strong>Get in Touch</strong></span>
           <h2 className={styles.contactTitle}>

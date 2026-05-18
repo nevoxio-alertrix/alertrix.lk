@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import styles from './Navbar.module.css'
 
 const navLinks = [
@@ -15,6 +17,7 @@ export default function Navbar() {
   const [active, setActive] = useState(null)
   const location = useLocation()
   const timerRef = useRef(null)
+  const headerRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
@@ -27,6 +30,30 @@ export default function Navbar() {
     setActive(null)
   }, [location.pathname])
 
+  useGSAP(() => {
+    const showAnim = gsap.from(headerRef.current, {
+      yPercent: -100,
+      paused: true,
+      duration: 0.4,
+      ease: 'power3.out'
+    }).progress(1)
+
+    gsap.to(headerRef.current, {
+      scrollTrigger: {
+        start: "top -80",
+        end: 99999,
+        onUpdate: (self) => {
+          if (self.direction === -1) {
+            showAnim.play()
+          } else {
+            showAnim.reverse()
+            setMenuOpen(false)
+          }
+        }
+      }
+    })
+  }, { scope: headerRef })
+
   const handleMenuEnter = () => {
     clearTimeout(timerRef.current)
     setMenuOpen(true)
@@ -37,6 +64,7 @@ export default function Navbar() {
 
   return (
     <header
+      ref={headerRef}
       className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.open : ''}`}
       onMouseLeave={handleMenuLeave}
     >
