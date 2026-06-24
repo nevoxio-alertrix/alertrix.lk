@@ -6,11 +6,17 @@
 /* ─── HERO ───────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 680px;
+  min-height: 100vh;
+  min-height: max(100dvh, 680px);
   display: flex;
   align-items: stretch;
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 100dvh;
+  }
 }
 
 .heroBg {
@@ -68,7 +74,7 @@
   }
 
   .heroTitle {
-    font-size: clamp(48px, 14vw, 80px);
+    font-size: clamp(34px, 13vw, 64px);
   }
 
   .heroBottom {
@@ -97,7 +103,9 @@
   letter-spacing: -0.03em;
   color: #fff;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .heroTitleDim {
@@ -147,8 +155,15 @@
 
 @media (max-width: 520px) {
   .heroTitle {
-    font-size: clamp(40px, 12vw, 96px);
-    letter-spacing: -0.02em;
+    font-size: clamp(34px, 11vw, 72px);
+    letter-spacing: -0.025em;
+    line-height: 0.94;
+  }
+
+  .heroBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 }
 
@@ -192,7 +207,7 @@
   }
 
   .sectionHeading {
-    font-size: clamp(26px, 4vw, 36px);
+    font-size: clamp(22px, 8vw, 32px);
   }
 
   .body-text {
@@ -360,7 +375,7 @@
   }
 
   .galleryTitle {
-    font-size: clamp(32px, 7vw, 48px);
+    font-size: clamp(24px, 9vw, 36px);
   }
 
   .galleryMeta {
@@ -440,6 +455,14 @@
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+@media (max-width: 520px) {
+  .galleryMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
 .galleryNum {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
@@ -488,6 +511,12 @@
   overflow: hidden;
   min-height: 420px;
   background: #0a0a0a;
+}
+
+@media (max-width: 640px) {
+  .appVideoWrap {
+    min-height: 300px;
+  }
 }
 
 .appVideo {
@@ -544,4 +573,31 @@
 
 .ctaBandBtn:hover {
   background: #222;
+}
+
+@media (max-width: 420px) {
+  .sectionHeading {
+    font-size: clamp(20px, 7vw, 28px);
+  }
+
+  .galleryTitle {
+    font-size: clamp(22px, 8vw, 32px);
+  }
+
+  .ctaBandTitle {
+    font-size: clamp(24px, 8vw, 40px);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat:last-child {
+    border-bottom: none;
+  }
 }

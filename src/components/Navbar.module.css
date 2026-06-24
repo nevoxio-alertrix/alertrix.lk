@@ -38,6 +38,30 @@
   }
 }
 
+@media (max-width: 520px) {
+  .bar {
+    height: 64px;
+    padding: 0 12px;
+  }
+
+  .logoWrap {
+    flex-shrink: 0;
+  }
+
+  .wordmark {
+    display: none;
+  }
+
+  .right {
+    gap: 16px;
+  }
+
+  .logoImg {
+    width: 52px !important;
+    height: 52px !important;
+  }
+}
+
 .header.scrolled .bar {
   height: 60px;
   background: rgba(0, 0, 0, 0.9);
@@ -275,4 +299,14 @@
 
 .drawerFooter {
   padding: 20px 36px;
+}
+
+@media (max-width: 520px) {
+  .drawerLink {
+    padding: 14px 16px;
+  }
+
+  .drawerFooter {
+    padding: 16px;
+  }
 }

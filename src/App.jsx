@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 import gsap from 'gsap'
@@ -25,6 +25,9 @@ function ScrollToTop() {
 
 function SmoothScroll() {
   useEffect(() => {
+    const media = window.matchMedia('(hover: hover) and (pointer: fine)')
+    if (!media.matches) return
+
     const lenis = new Lenis({
       duration: 1.5, // Slow, smooth motion
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing for premium feel
@@ -49,9 +52,25 @@ function SmoothScroll() {
 }
 
 export default function App() {
+  const [isFinePointer, setIsFinePointer] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const update = () => setIsFinePointer(media.matches)
+
+    update()
+    if (media.addEventListener) {
+      media.addEventListener('change', update)
+      return () => media.removeEventListener('change', update)
+    }
+
+    media.addListener(update)
+    return () => media.removeListener(update)
+  }, [])
+
   return (
     <BrowserRouter>
-      <CustomCursor />
+      {isFinePointer ? <CustomCursor /> : null}
       <SmoothScroll />
       <Navbar />
       <ScrollToTop />

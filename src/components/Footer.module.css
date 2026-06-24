@@ -76,6 +76,13 @@
   }
 }
 
+@media (max-width: 640px) {
+  .cols {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 .col {
   display: flex;
   flex-direction: column;
@@ -122,6 +129,13 @@
     padding: 16px;
     justify-content: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

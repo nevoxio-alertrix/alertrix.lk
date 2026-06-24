@@ -30,13 +30,17 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-main);
   background: var(--black);
   color: var(--white);
+  min-height: 100dvh;
   overflow-x: hidden;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none;
@@ -61,10 +65,21 @@ button {
   color: inherit;
 }
 
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 img,
 video {
   display: block;
   max-width: 100%;
+}
+
+img {
+  height: auto;
 }
 
 /* Scrollbar */
@@ -150,3 +165,30 @@ video {
 
 /* ─── Scroll reveal ──────────────────────────────────────── */
 /* Removed CSS transitions for [data-reveal]. We will use GSAP instead. */
+
+@media (hover: none) and (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+
+  .body-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    font-size: 10px;
+  }
+
+  .btn-primary {
+    padding: 12px 22px;
+  }
+}

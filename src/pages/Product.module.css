@@ -11,6 +11,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+  }
+}
+
 @media (min-width: 900px) {
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -30,6 +36,23 @@
   .heroLeft {
     padding: 56px 24px;
   }
+
+  .heroRight {
+    min-height: 320px;
+  }
+
+  .contextStats {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 32px 24px;
+  }
+
+  .rotatingSection {
+    height: 52vh;
+    min-height: 320px;
+  }
 }
 
 .heroTitle {
@@ -40,6 +63,9 @@
   letter-spacing: -0.03em;
   margin-top: 16px;
   color: #fff;
+  white-space: normal;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .heroTitleDim {
@@ -514,6 +540,49 @@
 
 .waitlistBtn:hover {
   background: #000;
+}
+
+@media (max-width: 420px) {
+  .heroLeft {
+    padding: 44px 20px 36px;
+  }
+
+  .heroTitle {
+    font-size: clamp(34px, 11vw, 58px);
+    line-height: 0.94;
+  }
+
+  .heroRight {
+    min-height: 260px;
+  }
+
+  .contextTitle {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .contextStats {
+    grid-template-columns: 1fr;
+  }
+
+  .videoTitle {
+    font-size: clamp(22px, 7vw, 32px);
+  }
+
+  .rotatingTitle {
+    font-size: clamp(30px, 10vw, 56px);
+  }
+
+  .pricingTitle {
+    font-size: clamp(26px, 8vw, 40px);
+  }
+
+  .waitlistTitle {
+    font-size: clamp(30px, 9vw, 48px);
+  }
+
+  .cardList li {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 640px) {
