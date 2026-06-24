@@ -14,8 +14,12 @@
   justify-content: space-between;
   height: 72px;
   padding: 0 24px;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.4s, background 0.4s, height 0.3s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 8, 8, 0.55);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition: border-color 0.4s, background 0.4s, height 0.3s, box-shadow 0.3s;
 }
 
 @media (max-width: 400px) {
@@ -64,10 +68,9 @@
 
 .header.scrolled .bar {
   height: 60px;
-  background: rgba(0, 0, 0, 0.9);
-  border-color: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(8, 8, 8, 0.72);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
 }
 
 /* ── Logo ───────────────────────────────────────────── */
@@ -225,10 +228,10 @@
 /* ── Mobile Drawer ──────────────────────────────────── */
 .drawer {
   display: block;
-  background: rgba(5, 5, 5, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(12, 12, 16, 0.72);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);

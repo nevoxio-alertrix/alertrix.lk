@@ -26,6 +26,12 @@
   --font-mono: 'DM Mono', monospace;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --glass-dark: rgba(12, 12, 16, 0.58);
+  --glass-dark-strong: rgba(12, 12, 16, 0.72);
+  --glass-light: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  --glass-shadow-soft: 0 16px 36px rgba(0, 0, 0, 0.18);
 }
 
 html {
@@ -35,7 +41,10 @@ html {
 
 body {
   font-family: var(--font-main);
-  background: var(--black);
+  background:
+    radial-gradient(circle at top, rgba(201, 169, 110, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.06), transparent 24%),
+    var(--black);
   color: var(--white);
   min-height: 100dvh;
   overflow-x: hidden;
@@ -161,6 +170,43 @@ img {
 .btn-ghost:hover {
   color: var(--white);
   border-color: var(--white);
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+.glass-panel--soft {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow-soft);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.glass-panel--dark {
+  background: var(--glass-dark);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+}
+
+.glass-panel--light {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  color: #111;
 }
 
 /* ─── Scroll reveal ──────────────────────────────────────── */

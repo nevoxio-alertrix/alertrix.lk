@@ -10,6 +10,12 @@
   padding: 72px 24px 56px;
   max-width: 1200px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
 @media (max-width: 400px) {
@@ -122,6 +128,8 @@
   margin: 0 auto;
   flex-wrap: wrap;
   gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 0 28px 28px;
 }
 
 @media (max-width: 400px) {
