@@ -211,7 +211,7 @@ export default function Home() {
                 <span className={styles.heroTitleDim}>RIX</span>
               </h1>
               <p className={styles.heroSub}>
-                Smart Alerts, &nbsp; Save Doses{tick % 2 === 0 ? '\u258c' : '\u00a0'}
+                Smart Alerts, &nbsp; Safe Doses{tick % 2 === 0 ? '\u258c' : '\u00a0'}
               </p>
             </div>
           </div>
