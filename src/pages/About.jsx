@@ -146,15 +146,25 @@ export default function About() {
         <div className={styles.heroInner}>
           <div className={styles.heroLeft}>
             <span className="eyebrow eyebrow--accent">AlertRix — Since 2025</span>
-            <h1 className={styles.heroTitle} style={{ overflow: 'hidden' }}>
-              <span style={{ display: 'inline-block' }}>ABOUT</span><br />
-              <span className={styles.heroTitleDim} style={{ display: 'inline-block' }}>US</span>
+            <h1 className={styles.heroTitle}>
+              <span>ABOUT</span><br />
+              <span className={styles.heroTitleDim}>US</span>
             </h1>
             <p className="body-text" style={{ marginTop: '24px', maxWidth: '420px' }}>
               AlertRix was founded in 2025 by a passionate multidisciplinary team who
               believed that advanced care technology should be available to every family —
               not just those in clinical settings.
             </p>
+            <div className={styles.heroCtas}>
+              <a href="/product#preorder" className="btn-primary">Get AlertRix</a>
+              <a href="#mission" className="btn-ghost">Our Mission</a>
+            </div>
+            <div className={styles.heroTrust}>
+              <span className={styles.stars}>★★★★★</span>
+              <span className={styles.trustText}>4.9/5 caregiver rating</span>
+              <span className={styles.bullet}>•</span>
+              <span className={styles.trustText}>Trusted by 1k+ Families</span>
+            </div>
           </div>
           <div className={styles.heroRight}>
             <div className={styles.logoCircle} style={{ opacity: 0 }}>
@@ -165,7 +175,7 @@ export default function About() {
       </section>
 
       {/* ── MISSION & VISION ──────────────────────────── */}
-      <section className={styles.mv}>
+      <section className={styles.mv} id="mission">
         <div className={styles.mvCard}>
           <div className={styles.mvIcon}>🎯</div>
           <div className={styles.mvBody}>

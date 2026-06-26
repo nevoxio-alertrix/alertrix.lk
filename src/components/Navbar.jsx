@@ -6,9 +6,9 @@ import styles from './Navbar.module.css'
 
 const navLinks = [
   { label: 'Home', path: '/' },
-  { label: 'Product', path: '/product' },
-  { label: 'Features', path: '/features' },
-  { label: 'About', path: '/about' },
+  { label: 'AlertRix Device', path: '/product' },
+  { label: 'Care Capabilities', path: '/features' },
+  { label: 'Our Care Mission', path: '/about' },
 ]
 
 export default function Navbar() {

@@ -1,10 +1,10 @@
-import { useRef, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { animate, stagger } from 'animejs'
 import { useTextReveal, useMagneticHover, useStaggerOnScroll } from '../hooks/useAnime.js'
 import Footer from '../components/Footer.jsx'
-import { Link } from 'react-router-dom'
 import styles from './Product.module.css'
 
 const included = [
@@ -24,6 +24,8 @@ const premiumExtras = [
 
 export default function Product() {
   const containerRef = useRef(null)
+  const heroBgRef = useRef(null)
+  const svgLineRef = useRef(null)
   const contextHeadingRef = useTextReveal({ delay: 100, duration: 1200, staggerDelay: 28, easing: 'easeOutExpo' })
   const pricingBtnRef = useMagneticHover(0.2)
   const pricingContainerRef = useStaggerOnScroll('[data-price-card]', {
@@ -58,7 +60,36 @@ export default function Product() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    if (svgLineRef.current) {
+      const paths = svgLineRef.current.querySelectorAll('path, line, circle')
+      paths.forEach(p => {
+        const len = p.getTotalLength ? p.getTotalLength() : 100
+        p.style.strokeDasharray = len
+        p.style.strokeDashoffset = len
+      })
+      animate(paths, {
+        strokeDashoffset: [function(el) { return el.getTotalLength ? el.getTotalLength() : 100 }, 0],
+        opacity: [0, 0.6],
+        duration: 2800,
+        delay: stagger(200, { start: 800 }),
+        ease: 'inOutQuart'
+      })
+    }
+  }, [])
+
   useGSAP(() => {
+    gsap.to(heroBgRef.current, {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: `.${styles.hero}`,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    })
+
     // Hero entry animation
     const tl = gsap.timeline()
     tl.from(`.${styles.heroTitle} span`, {
@@ -69,7 +100,7 @@ export default function Product() {
       ease: 'power4.out',
       delay: 0.2
     })
-    tl.from(`.${styles.heroLeft} > *:not(.${styles.heroTitle})`, {
+    tl.from(`.${styles.heroTop}, .${styles.heroSub}, .${styles.heroBottom}, .${styles.heroTrust}`, {
       opacity: 0,
       y: 20,
       duration: 1,
@@ -98,27 +129,50 @@ export default function Product() {
 
       {/* ── HERO ─────────────────────────────────────── */}
       <section className={styles.hero}>
-        <div className={styles.heroLeft}>
-          <span className="eyebrow eyebrow--accent"><strong>AlertRix — 2025</strong></span>
-          <h1 className={styles.heroTitle} style={{ overflow: 'hidden' }}>
-            <span style={{ display: 'inline-block' }}>PRECISION</span><br />
-            <span className={styles.heroTitleDim} style={{ display: 'inline-block' }}>REMINDERS.</span>
-          </h1>
-          <p className="body-text" style={{ maxWidth: '400px', marginTop: '24px' }}>
-            We are solving medication mismanagement among the elderly — combining
-            cutting-edge AI with a natural voice interface for seamless, proactive care.
-          </p>
-          <div className={styles.heroCtas}>
+        <div className={styles.heroBg}>
+          <img ref={heroBgRef} src="/Product%20hero.png" alt="" aria-hidden="true" className={styles.heroBgImg} />
+          <div className={styles.heroBgOverlay} />
+        </div>
+
+        <svg ref={svgLineRef} className={styles.heroSvg} viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="160" stroke="rgba(201,169,110,0.3)" strokeWidth="0.5" />
+          <circle cx="200" cy="200" r="100" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+          <line x1="40" y1="200" x2="360" y2="200" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
+          <line x1="200" y1="40" x2="200" y2="360" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
+          <path d="M200 40 L360 200 L200 360 L40 200 Z" stroke="rgba(201,169,110,0.15)" strokeWidth="0.5" />
+        </svg>
+
+        <div className={styles.heroInner}>
+          <div className={styles.heroTop}>
+            <span className="eyebrow eyebrow--accent"><strong>AlertRix — 2025</strong></span>
+          </div>
+
+          <div className={styles.heroCenter}>
+            <h1 className={styles.heroTitle}>
+              <span>PRECISION</span><br />
+              <span className={styles.heroTitleDim}>REMINDERS</span>
+            </h1>
+            <p className={styles.heroSub}>
+              AI-powered medication care for safer daily routines.
+            </p>
+          </div>
+
+          <div className={styles.heroBottom}>
             <a href="#preorder" className="btn-primary" ref={pricingBtnRef} data-cursor-hover>View Pricing</a>
             <Link to="/features" className="btn-ghost">Explore Features →</Link>
           </div>
-          <div className={styles.heroRule} />
-          <p className={styles.heroNote}>
-            Limited pre-order batch available. Reserve yours now.
-          </p>
-        </div>
-        <div className={styles.heroRight}>
-          <div className={`${styles.heroImgCaption} gsap-fade-up`}>AlertRix — Mk I</div>
+
+          <div className={styles.heroTrust}>
+            <span className={styles.stars}>★★★★★</span>
+            <span className={styles.trustText}>4.9/5 Caregiver Rating</span>
+            <span className={styles.bullet}>•</span>
+            <span className={styles.trustText}>10k+ Doses Managed</span>
+          </div>
+
+          <div className={styles.scrollCue}>
+            <span className={styles.scrollLine} />
+            <span className="eyebrow" style={{ marginTop: '8px' }}>Scroll</span>
+          </div>
         </div>
       </section>
 
@@ -244,7 +298,7 @@ export default function Product() {
             Secure your place for the next production batch and get launch updates first.
           </p>
           <form className={styles.waitlistForm} onSubmit={e => e.preventDefault()}>
-            <input type="email" placeholder="your@email.com" className={styles.waitlistInput} />
+            <input type="email" placeholder="your@email.com" className={styles.waitlistInput} aria-label="Email address" />
             <button type="submit" className={styles.waitlistBtn}>Join Waitlist</button>
           </form>
         </div>

@@ -32,6 +32,12 @@
   --glass-border: rgba(255, 255, 255, 0.14);
   --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
   --glass-shadow-soft: 0 16px 36px rgba(0, 0, 0, 0.18);
+
+  --nav-height: 72px;
+  --page-pad-x: clamp(16px, 4vw, 48px);
+  --section-pad-y: clamp(56px, 9vw, 100px);
+  --hero-title-size: clamp(2.5rem, 4.8vw, 5.5rem);
+  --hero-title-size-compact: clamp(2rem, 8.5vw, 3.4rem);
 }
 
 html {
@@ -48,11 +54,19 @@ body {
   color: var(--white);
   min-height: 100dvh;
   overflow-x: hidden;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none;
+}
+
+@media (max-width: 520px) {
+  :root {
+    --nav-height: 64px;
+    --page-pad-x: clamp(16px, 6vw, 24px);
+    --section-pad-y: clamp(48px, 14vw, 72px);
+  }
 }
 
 /* Restore cursor on touch devices */
@@ -65,6 +79,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Focus styles for keyboard navigation accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 button {
@@ -112,8 +132,8 @@ img {
 /* ─── Global text styles ─────────────────────────────────── */
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.25em;
+  font-size: clamp(9px, 0.85vw, 11px);
+  letter-spacing: clamp(0.14em, 0.7vw, 0.25em);
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
   display: block;
@@ -125,7 +145,7 @@ img {
 
 .body-text {
   font-family: var(--font-main);
-  font-size: 15px;
+  font-size: clamp(14px, 1.1vw, 15px);
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
@@ -137,13 +157,14 @@ img {
   align-items: center;
   gap: 10px;
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: clamp(10px, 0.9vw, 12px);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: var(--white);
   color: var(--black);
-  padding: 14px 32px;
+  min-height: 44px;
+  padding: 13px clamp(20px, 2.4vw, 32px);
   transition: background 0.3s var(--ease-out), transform 0.3s;
 }
 
@@ -157,7 +178,7 @@ img {
   align-items: center;
   gap: 8px;
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: clamp(10px, 0.9vw, 12px);
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -165,6 +186,18 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 4px;
   transition: color 0.3s, border-color 0.3s;
+}
+
+@supports (height: 100svh) {
+  .viewport-fit {
+    min-height: 100svh;
+  }
+}
+
+@container (inline-size < 480px) {
+  .body-text {
+    line-height: 1.7;
+  }
 }
 
 .btn-ghost:hover {

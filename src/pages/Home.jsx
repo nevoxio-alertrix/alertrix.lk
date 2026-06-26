@@ -184,7 +184,7 @@ export default function Home() {
       {/* ── HERO ──────────────────────────────────── */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
-          <img ref={heroBgRef} src="/main.jpg" alt="" aria-hidden="true" className={styles.heroBgImg} style={{ height: '120%' }} />
+          <img ref={heroBgRef} src="/main.jpg" alt="" aria-hidden="true" className={styles.heroBgImg} />
           <div className={styles.heroBgOverlay} />
         </div>
 
@@ -198,20 +198,22 @@ export default function Home() {
         </svg>
 
         <div className={styles.heroInner}>
-          <div className={styles.heroTop}>
-            <span className="eyebrow eyebrow--accent">
-              AI-Powered Care System — Est. 2025
-            </span>
-          </div>
+          <div className={styles.heroTopGroup}>
+            <div className={styles.heroTop}>
+              <span className="eyebrow eyebrow--accent">
+                AI-Powered Care System — Est. 2025
+              </span>
+            </div>
 
-          <div className={styles.heroCenter}>
-            <h1 className={styles.heroTitle} style={{ overflow: 'hidden' }}>
-              <span style={{ display: 'inline-block' }}>ALERT</span>
-              <span className={styles.heroTitleDim} style={{ display: 'inline-block' }}>RIX</span>
-            </h1>
-            <p className={styles.heroSub}>
-              Smart Alerts, &nbsp; Save Doses{tick % 2 === 0 ? '\u258c' : '\u00a0'}
-            </p>
+            <div className={styles.heroCenter}>
+              <h1 className={styles.heroTitle}>
+                <span>ALERT</span>
+                <span className={styles.heroTitleDim}>RIX</span>
+              </h1>
+              <p className={styles.heroSub}>
+                Smart Alerts, &nbsp; Save Doses{tick % 2 === 0 ? '\u258c' : '\u00a0'}
+              </p>
+            </div>
           </div>
 
           <div className={styles.heroBottom}>
