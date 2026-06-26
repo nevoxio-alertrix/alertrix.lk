@@ -186,7 +186,7 @@ export default function Features() {
               <span className={styles.heroTitleDim}>FEATURES</span>
             </h1>
             <p className={styles.heroSub}>
-              Smart Alerts, &nbsp; Save Doses{tick % 2 === 0 ? '\u258c' : '\u00a0'}
+              Smart Alerts, &nbsp; safe doses{tick % 2 === 0 ? '\u258c' : '\u00a0'}
             </p>
           </div>
 

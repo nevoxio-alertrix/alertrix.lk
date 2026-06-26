@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.brand}>
           <img src="/LOGO.png" alt="AlertRix" className={styles.logo} />
           <p className={styles.brandName}>AlertRix</p>
-          <p className={styles.tagline}>SMART ALERTS, SAVE DOSES</p>
+          <p className={styles.tagline}>SMART ALERTS, safe doses</p>
         </div>
 
         {/* Nav columns */}

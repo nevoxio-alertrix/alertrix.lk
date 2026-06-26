@@ -58,7 +58,7 @@ export default function Home() {
           </h1>
 
           <p className={styles.heroSub}>
-            SMART ALERTS,&nbsp;&nbsp;SAVE DOSES{tick % 2 === 0 ? '▌' : ' '}
+            SMART ALERTS,&nbsp;&nbsp;safe doses{tick % 2 === 0 ? '▌' : ' '}
           </p>
 
           <div className={styles.heroCtas}>
