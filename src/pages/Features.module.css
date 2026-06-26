@@ -612,7 +612,7 @@
   }
 
   .featListTitle {
-    font-size: clamp(32px, 10vw, 48px);
+    font-size: clamp(26px, 7vw, 48px);
   }
 
   .ctaTitle {
@@ -967,7 +967,7 @@
   }
 
   .featListTitle {
-    font-size: clamp(32px, 10vw, 48px);
+    font-size: clamp(26px, 7vw, 48px);
   }
 
   .ctaTitle {
