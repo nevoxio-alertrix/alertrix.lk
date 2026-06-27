@@ -54,7 +54,7 @@ body {
   color: var(--white);
   min-height: 100dvh;
   overflow-x: hidden;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
