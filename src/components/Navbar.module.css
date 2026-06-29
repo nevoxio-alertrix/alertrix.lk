@@ -48,7 +48,7 @@
     padding: 0 12px;
   }
 
-  .logoWrap {
+  .brand {
     flex-shrink: 0;
   }
 
@@ -73,14 +73,16 @@
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
 }
 
-/* ── Logo ───────────────────────────────────────────── */
-.logoWrap {
+/* ── Brand ──────────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
   opacity: 0.95;
   transition: opacity 0.3s;
 }
 
-.logoWrap:hover {
+.brand:hover {
   opacity: 1;
 }
 
@@ -110,9 +112,13 @@
   color: #fff;
 }
 
-@media (min-width: 1180px) and (max-width: 1499px) {
+@media (min-width: 1180px) {
   .wordmark {
-    display: none;
+    position: static;
+    transform: none;
+    left: auto;
+    margin-left: 12px;
+    font-size: 20px !important;
   }
 }
 

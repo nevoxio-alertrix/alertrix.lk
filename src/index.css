@@ -54,7 +54,7 @@ body {
   color: var(--white);
   min-height: 100dvh;
   overflow-x: hidden;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -130,6 +130,12 @@ img {
 }
 
 /* ─── Global text styles ─────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-wrap: balance;
+}
+
 .eyebrow {
   font-family: var(--font-mono);
   font-size: clamp(9px, 0.85vw, 11px);

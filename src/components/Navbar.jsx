@@ -69,13 +69,11 @@ export default function Navbar() {
       onMouseLeave={handleMenuLeave}
     >
       <div className={styles.bar}>
-        {/* Left — logo mark */}
-        <Link to="/" className={styles.logoWrap}>
-          <img src="/LOGO.png" alt="AlertRix" style={{ width: '80px', height: '80px' }} className={styles.logoImg} />
+        {/* Brand Group (Logo + Wordmark) */}
+        <Link to="/" className={styles.brand}>
+          <img src="/LOGO.png" alt="AlertRix Logo" className={styles.logoImg} />
+          <span className={styles.wordmark}>AlertRix</span>
         </Link>
-
-        {/* Center — wordmark */}
-        <Link to="/" className={styles.wordmark} style={{ fontSize: '28px' }}>AlertRix</Link>
 
         {/* Right — links + CTA */}
         <div className={styles.right}>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AlertRix Quick Learn Summary</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 18mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #151515;
+        background: #ffffff;
+        line-height: 1.45;
+        font-size: 11pt;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.15;
+      }
+
+      h1 {
+        font-size: 30pt;
+        letter-spacing: 0.02em;
+      }
+
+      h2 {
+        font-size: 15pt;
+        margin-top: 20px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #d6d6d6;
+      }
+
+      h3 {
+        font-size: 12pt;
+        margin-top: 12px;
+      }
+
+      p {
+        margin: 8px 0;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      .cover {
+        padding: 22px;
+        color: #ffffff;
+        background: #050505;
+        border-radius: 10px;
+        margin-bottom: 18px;
+      }
+
+      .subtitle {
+        color: #c9a96e;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 9pt;
+        margin-bottom: 12px;
+      }
+
+      .tagline {
+        font-size: 13pt;
+        color: #eeeeee;
+        max-width: 620px;
+        margin-top: 10px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .card {
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        padding: 12px;
+        break-inside: avoid;
+      }
+
+      .label {
+        display: inline-block;
+        color: #735a28;
+        background: #f4ead3;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 8.5pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .pitch {
+        border-left: 4px solid #c9a96e;
+        padding: 10px 12px;
+        background: #faf7f0;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      .muted {
+        color: #555555;
+      }
+
+      .footer {
+        margin-top: 24px;
+        padding-top: 10px;
+        border-top: 1px solid #d6d6d6;
+        color: #666666;
+        font-size: 9pt;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <div class="subtitle">Interview Quick Learn</div>
+      <h1>AlertRix Repository Summary</h1>
+      <p class="tagline">A React/Vite product showcase website for an AI-powered medication management companion.</p>
+    </section>
+
+    <h2>1. Project Purpose</h2>
+    <p>
+      AlertRix is presented as an AI-powered medication management device for seniors, caregivers, and families.
+      The website explains the product vision, shows how the device works, highlights key features, and guides users
+      toward preordering, joining a waitlist, or contacting the team.
+    </p>
+    <div class="pitch">
+      Interview line: "This is a React-based product website for AlertRix, an AI medication-care companion that helps seniors avoid missed doses through voice reminders, guardian alerts, scheduling, and AI-assisted monitoring."
+    </div>
+
+    <h2>2. Technology Stack</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="label">Frontend</span>
+        <ul>
+          <li>React 18</li>
+          <li>Vite</li>
+          <li>React Router DOM</li>
+          <li>CSS Modules</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="label">Motion / UX</span>
+        <ul>
+          <li>GSAP and ScrollTrigger</li>
+          <li>@gsap/react</li>
+          <li>Anime.js</li>
+          <li>Lenis smooth scrolling</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="label">Deployment</span>
+        <ul>
+          <li>Vercel configuration</li>
+          <li>SPA rewrites to index.html</li>
+          <li>Production build via vite build</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="label">Assets</span>
+        <ul>
+          <li>Product images</li>
+          <li>Explainer videos</li>
+          <li>Logo and team visuals</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>3. Main Routes</h2>
+    <ul>
+      <li><strong>/</strong> - Home page with hero, product overview, stats, gallery, app preview, and preorder CTA.</li>
+      <li><strong>/product</strong> - Product problem statement, videos, pricing cards, and waitlist UI.</li>
+      <li><strong>/features</strong> - Feature walkthrough and capability cards.</li>
+      <li><strong>/about</strong> - Mission, vision, values, team members, and contact links.</li>
+    </ul>
+
+    <h2>4. Key Functionalities</h2>
+    <ul>
+      <li>Responsive navigation with desktop links and mobile drawer.</li>
+      <li>Smooth page scrolling on fine-pointer devices.</li>
+      <li>Custom animated cursor for desktop users.</li>
+      <li>Scroll-triggered reveal animations across sections.</li>
+      <li>Hero parallax effects and animated SVG line art.</li>
+      <li>Product videos with posters and autoplay/loop behavior.</li>
+      <li>Pricing cards for Standard and Premium plans.</li>
+      <li>Footer with navigation, Instagram, WhatsApp, LinkedIn, and enquiry details.</li>
+    </ul>
+
+    <h2>5. Product Features Presented</h2>
+    <ul>
+      <li>Smart voice alerts for medication reminders.</li>
+      <li>AI chatbot companion for health queries and check-ins.</li>
+      <li>Guardian alerts when doses are missed or emergencies happen.</li>
+      <li>Smart scheduling that adapts to routines.</li>
+      <li>Dual power system with backup battery.</li>
+      <li>Future-ready OTA updates.</li>
+      <li>Health summaries, cloud uploads, and priority alerts in Premium.</li>
+    </ul>
+
+    <h2>6. Architecture Summary</h2>
+    <p>
+      The application is a client-side single-page app. <strong>src/App.jsx</strong> registers routes, adds the navbar,
+      enables smooth scrolling, resets scroll position on route changes, and conditionally renders the custom cursor.
+      Each page has its own JSX file and CSS Module. Shared UI lives in <strong>src/components</strong>, while reusable
+      Anime.js hooks live in <strong>src/hooks/useAnime.js</strong>.
+    </p>
+
+    <h2>7. Current Limitations</h2>
+    <ul>
+      <li>No backend, database, authentication, payment system, or admin dashboard.</li>
+      <li>The waitlist form prevents default submission but does not send or store emails.</li>
+      <li>There is a duplicated nested project folder named <strong>alertrix.lk</strong>, and some duplicate files differ.</li>
+      <li>README is minimal, so project documentation could be improved.</li>
+    </ul>
+
+    <h2>8. Interview Pitch</h2>
+    <p class="pitch">
+      "AlertRix is a Vite and React single-page application built as a polished product website for an AI-powered
+      medication management device. I used React Router for navigation, CSS Modules for scoped styling, and GSAP,
+      Anime.js, and Lenis to create a smooth interactive experience. The site presents the product story, features,
+      pricing, preorder flow, videos, gallery, team, and contact channels. It is currently frontend-focused, so future
+      improvements would include connecting the waitlist to a backend, adding analytics, improving accessibility, and
+      integrating real preorder or payment functionality."
+    </p>
+
+    <h2>9. Build Check</h2>
+    <p>The production build was tested successfully with <strong>npm run build</strong>.</p>
+
+    <div class="footer">
+      Generated for interview preparation from the AlertRix.lk repository.
+    </div>
+  </body>
+</html>
